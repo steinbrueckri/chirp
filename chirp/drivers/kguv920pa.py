@@ -433,6 +433,10 @@ class KGUV920PARadio(chirp_common.CloneModeRadio,
     _model = "KG-UV920Rr"   # what the radio responds to CMD_ID with
     _file_ident = b"KGUV920PA"
     BAUD_RATE = 19200
+
+    @classmethod
+    def match_model(cls, filedata, filename):
+        return cls._file_ident in filedata[0x400:0x408]
     POWER_LEVELS = [chirp_common.PowerLevel("L", watts=5),
                     chirp_common.PowerLevel("M", watts=20),
                     chirp_common.PowerLevel("H", watts=50)]
@@ -455,7 +459,7 @@ class KGUV920PARadio(chirp_common.CloneModeRadio,
             # add the chars to the packet
             _packet += payload
         # calculate and add the checksum to the packet
-        _packet += bytes([checksum.checksum_8bit(_packet[1:])])
+        _packet += bytes([checksum.checksum_8bit(_packet[1:], 16)])
         LOG.debug("Sent:\n%s" % util.hexprint(_packet))
         self.pipe.write(_packet)
 
@@ -468,8 +472,8 @@ class KGUV920PARadio(chirp_common.CloneModeRadio,
             raise errors.RadioError('Radio sent short header')
         _length = _header[3]
         _packet = self.pipe.read(_length)
-        _cs = checksum.checksum_8bit(_header[1:])
-        _cs += checksum.checksum_8bit(_packet)
+        _cs = checksum.checksum_8bit(_header[1:], 16)
+        _cs += checksum.checksum_8bit(_packet, 16)
         _cs %= 16
         try:
             _rcs = self.pipe.read(1)[0]
@@ -479,10 +483,6 @@ class KGUV920PARadio(chirp_common.CloneModeRadio,
             LOG.error("_cs =%x", _cs)
             LOG.error("_rcs=%x", _rcs)
         return (_rcs != _cs, _packet)
-
-    @classmethod
-    def match_model(cls, filedata, filename):
-        return cls._file_ident in filedata[0x400:0x408]
 
     def _identify(self):
         """

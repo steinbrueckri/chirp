@@ -140,17 +140,23 @@ VOICE_LIST = ["Off", "English"]
 VOXD_LIST = ["0.5", "1.0", "1.5", "2.0", "2.5", "3.0"]
 VOXL_LIST = ["OFF"] + ["%s" % x for x in range(1, 10)]
 
-PMR_TONES = tuple(
-    set(chirp_common.TONES) - set([69.3, 159.8, 165.5, 171.3, 177.3,
-                                   183.5, 189.9, 196.6, 199.5, 206.5,
-                                   229.1, 254.1]))
+# Sort to preserve chirp_common ordering because these tuples are used for
+# positional tone/DTCS index mapping when decoding the radio image.
+PMR_TONES = tuple(sorted(
+    set(chirp_common.TONES) - set([
+        69.3, 159.8, 165.5, 171.3, 177.3,
+        183.5, 189.9, 196.6, 199.5, 206.5,
+        229.1, 254.1
+    ])
+))
 
-PMR_DTCS_CODES = tuple(
-    set(chirp_common.DTCS_CODES) - set([36,  53, 122, 145, 212,
-                                        225, 246, 252, 255, 266,
-                                        274, 325, 332, 356, 446,
-                                        452, 454, 455, 462, 523,
-                                        526]))
+PMR_DTCS_CODES = tuple(sorted(
+    set(chirp_common.DTCS_CODES) - set([
+        36, 53, 122, 145, 212, 225, 246, 252, 255,
+        266, 274, 325, 332, 356, 446, 452, 454, 455,
+        462, 523, 526
+    ])
+))
 
 
 def _enter_programming_mode(radio):
@@ -464,8 +470,9 @@ class RB28Radio(chirp_common.CloneModeRadio):
         mem.extra.append(rset)
 
         _obj = self._memobj.bclo
-        key = "chnl_%i" % (mem.number)
-        rs = RadioSettingValueBoolean(getattr(_obj, "chnl_%i" % (mem.number)))
+        key = "bclo"
+        rs = RadioSettingValueBoolean(
+            getattr(_obj, "chnl_%i" % mem.number))
         rset = RadioSetting(key, "Busy Channel Lockout", rs)
         mem.extra.append(rset)
 
@@ -575,8 +582,9 @@ class RB28Radio(chirp_common.CloneModeRadio):
         _mem.highpower = mem.power == self.POWER_LEVELS[0]
 
         for setting in mem.extra:
-            if setting.get_name().startswith("chnl_"):
-                setattr(self._memobj.bclo, setting.get_name(), setting.value)
+            if setting.get_name() == "bclo":
+                setattr(self._memobj.bclo,
+                        "chnl_%i" % mem.number, setting.value)
             else:
                 setattr(_mem, setting.get_name(), setting.value)
 
@@ -709,12 +717,6 @@ class RB28Radio(chirp_common.CloneModeRadio):
                 except Exception:
                     LOG.debug(element.get_name())
                     raise
-
-    @classmethod
-    def match_model(cls, filedata, filename):
-        # Radios that have always been post-metadata, so never do
-        # old-school detection
-        return False
 
 
 @directory.register

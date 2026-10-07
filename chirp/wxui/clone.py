@@ -30,6 +30,7 @@ from chirp import chirp_common
 from chirp import directory
 from chirp.drivers import fake
 from chirp import errors
+from chirp import urlhandler
 from chirp.wxui import config
 from chirp.wxui import common
 from chirp.wxui import developer
@@ -41,6 +42,8 @@ CONF = config.get()
 HELPME = _('Help Me...')
 CUSTOM = _('Custom...')
 ID_RECENT = wx.NewId()
+
+urlhandler.register()
 
 
 def is_prolific_warning(string):
@@ -431,6 +434,9 @@ class ChirpCloneDialog(wx.Dialog):
                       for port in sorted(system_ports,
                                          key=port_sort_key)
                       if port.device not in filter_ports]
+
+        if urlhandler.has_ble():
+            self.ports.append(('ble://', _('Bluetooth LE')))
 
         favorite_ports = CONF.get('favorite_ports', 'state') or ''
         for port in favorite_ports.split(','):
