@@ -909,6 +909,11 @@ class ChirpMain(wx.Frame):
         self.Bind(wx.EVT_MENU, self._menu_query_mapy73pl, query_mapy73pl_item)
         source_menu.Append(query_mapy73pl_item)
 
+        query_dfs_item = wx.MenuItem(source_menu, wx.NewId(),
+                                     'DFS (German airband)')
+        self.Bind(wx.EVT_MENU, self._menu_query_dfs, query_dfs_item)
+        source_menu.Append(query_dfs_item)
+
         query_amsat_item = wx.MenuItem(
             source_menu, wx.NewId(),
             'Radio Amateur Satellites (GitHub Mirror)')
@@ -2131,6 +2136,9 @@ GNU General Public License for more details."""
 
     def _menu_query_mapy73pl(self, event):
         self._do_network_query(query_sources.Mapy73PlQueryDialog)
+
+    def _menu_query_dfs(self, event):
+        self._do_network_query(query_sources.DFSQueryDialog)
 
     def _menu_query_amsats(self, event):
         self._do_network_query(query_sources.RadioAmateurSatellitesQueryDialog)
