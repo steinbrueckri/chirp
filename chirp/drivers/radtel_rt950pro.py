@@ -2880,6 +2880,30 @@ _EXTRA_CHANNEL_OFFSET = _SEGMENT_LENGTH - EXTRA_CHANNEL_SEGMENT_BYTES
 _AIRBAND = (118_000_000, 137_000_000)  # AM only, receive only
 _LOW_BAND = (18_000_000, 64_000_000)  # FM only
 
+
+def _tx_freq(mem) -> int:
+    return {"+": mem.freq + mem.offset, "-": mem.freq - mem.offset,
+            "split": mem.offset}.get(mem.duplex, mem.freq)
+
+
+def _channel_name_hz(hz: int) -> int:
+    """The frequency the radio stores for an 8.33 kHz airband carrier.
+
+    The radio keeps 8.33 kHz channels by their published name, as its
+    display shows them, not by carrier: tuned with the 8.33 kHz step,
+    118.235 is stored as 118.235000 while CHIRP holds its carrier,
+    118.233333. Everything else is stored as it is.
+    """
+    if not _AIRBAND[0] <= hz <= _AIRBAND[1]:
+        return hz
+    offset = hz % 25000
+    if offset in (8330, 8333):
+        return hz - offset + 10000
+    if offset in (16660, 16666):
+        return hz - offset + 15000
+    return hz
+
+
 # Bluetooth LE: one-time unlock written to this characteristic before the
 # radio accepts clone traffic on its transparent-UART characteristic.
 _BLE_UNLOCK_CHAR = "0000ff31-0000-1000-8000-00805f9b34fb"
@@ -4025,8 +4049,7 @@ class RT950ProRadio(chirp_common.CloneModeRadio):
         # Use CHIRP's standard DCS code list; do not include 0/"000"
         # to avoid invalid DTCS state during CSV export.
         rf.valid_dtcs_codes = list(chirp_common.DTCS_CODES)
-        # The steps the radio's own menu offers; it has no 8.33 kHz.
-        rf.valid_tuning_steps = [2.5, 5.0, 6.25, 10.0, 12.5, 25.0]
+        rf.valid_tuning_steps = [2.5, 5.0, 6.25, 8.33, 10.0, 12.5, 25.0]
         rf.valid_characters = chirp_common.CHARSET_ASCII
         rf.valid_name_length = 12
         return rf
@@ -4147,15 +4170,11 @@ class RT950ProRadio(chirp_common.CloneModeRadio):
         elif _LOW_BAND[0] <= mem.freq <= _LOW_BAND[1] and mem.mode == "AM":
             msgs.append(chirp_common.ValidationError(
                 "Channels below 64 MHz do not support AM"))
-        tx_freq = {"+": mem.freq + mem.offset, "-": mem.freq - mem.offset,
-                   "split": mem.offset}.get(mem.duplex, mem.freq)
-        for freq in {mem.freq, tx_freq}:
-            if freq % 10:
-                # e.g. an 8.33 kHz airband carrier such as 118.508333
+        for freq in {mem.freq, _tx_freq(mem)}:
+            if _channel_name_hz(freq) % 10:
                 msgs.append(chirp_common.ValidationError(
                     "%s MHz cannot be stored: the radio holds frequencies "
-                    "in 10 Hz steps and has no 8.33 kHz channels" %
-                    chirp_common.format_freq(freq)))
+                    "in 10 Hz steps" % chirp_common.format_freq(freq)))
         return msgs
 
     def get_memory(self, number):
@@ -4281,15 +4300,8 @@ class RT950ProRadio(chirp_common.CloneModeRadio):
         mem.tmode = ""
 
     def _apply_memory_to_channel(self, mem, channel: ChannelRecord) -> None:
-        channel.rx_hz = mem.freq
-        if mem.duplex == "+":
-            channel.tx_hz = mem.freq + mem.offset
-        elif mem.duplex == "-":
-            channel.tx_hz = mem.freq - mem.offset
-        elif mem.duplex == "split":
-            channel.tx_hz = mem.offset
-        else:
-            channel.tx_hz = mem.freq
+        channel.rx_hz = _channel_name_hz(mem.freq)
+        channel.tx_hz = _channel_name_hz(_tx_freq(mem))
         channel.name = (mem.name or "").rstrip()
         self._update_tones_from_memory(mem, channel)
 
