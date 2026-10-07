@@ -23,10 +23,12 @@ import logging
 
 from chirp import logger
 from chirp import chirp_common, errors, directory, util
+from chirp import urlhandler
 
 sys.modules['builtins']._ = lambda x: x  # type: ignore[attr-defined]
 
 directory.import_drivers()
+urlhandler.register()
 
 LOG = logging.getLogger("chirpc")
 RADIOS = directory.DRV_TO_RADIO
