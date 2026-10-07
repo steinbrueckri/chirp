@@ -854,6 +854,10 @@ def parse_vfo_section(section: bytes) -> List[VFOSettings]:
         )
         encryption = (chunk[17] >> 4) & 0x03
         rx_modulation = Modulation.AM if (chunk[17] & 0x01) else Modulation.FM
+        # Not a frequency band despite the name: measured on a radio, 145.5
+        # and 173.97 MHz carried 0 and 1, and 173.97, 438 and 520 MHz all
+        # 1. The radio manages it (likely its band-key memory), so it is
+        # only preserved, never offered as a setting.
         freq_band = chunk[18] & 0x0F
         step_freq = chunk[19] & 0x0F
         offset_hz = _decode_offset_frequency(chunk[20:27])
@@ -3081,15 +3085,6 @@ _VFO_ENCRYPTION_CHOICES = [
     ('Type 2', 2),
     ('Type 3', 3),
 ]
-_VFO_BAND_CHOICES = [
-    ('50-76 MHz', 0),
-    ('108-136 MHz', 1),
-    ('137-174 MHz', 2),
-    ('174-350 MHz', 3),
-    ('350-400 MHz', 4),
-    ('400-470 MHz', 5),
-    ('470-600 MHz', 6),
-]
 # In the order of the radio's step menu, which is what it stores.
 _VFO_STEP_CHOICES = [
     (label, index) for index, label in enumerate((
@@ -3310,21 +3305,6 @@ def _build_vfo_group(vfos: Optional[List[VFOSettings]]) -> RadioSettingGroup:
         )
         step_setting.set_apply_callback(_apply_vfo_step, vfo)
         subgroup.append(step_setting)
-
-        band_labels = [label for label, _ in _VFO_BAND_CHOICES]
-        band_values = [value for _, value in _VFO_BAND_CHOICES]
-        band_index = (
-            band_values.index(vfo.freq_band)
-            if vfo.freq_band in band_values
-            else 0
-        )
-        freq_band_setting = RadioSetting(
-            f'vfo.{idx}.freq_band',
-            'Frequency Band',
-            RadioSettingValueList(band_labels, current_index=band_index),
-        )
-        freq_band_setting.set_apply_callback(_apply_vfo_freq_band, vfo)
-        subgroup.append(freq_band_setting)
 
         signalling_setting = RadioSetting(
             f'vfo.{idx}.signalling_group',
@@ -3703,11 +3683,6 @@ def _apply_vfo_encryption(rsetting, vfo):
 def _apply_vfo_step(rsetting, vfo):
     index = _value_as_index(rsetting.value, _VFO_STEP_CHOICES)
     vfo.step_freq_index = _VFO_STEP_CHOICES[index][1]
-
-
-def _apply_vfo_freq_band(rsetting, vfo):
-    index = _value_as_index(rsetting.value, _VFO_BAND_CHOICES)
-    vfo.freq_band = _VFO_BAND_CHOICES[index][1]
 
 
 def _apply_vfo_signalling(rsetting, vfo):
