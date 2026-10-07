@@ -1018,13 +1018,11 @@ def parse_modulation_sections(
     am_step = _optional(mod_block[151], 4)
     ssb_rx_gain = _optional(mod_block[152], 37)
 
-    fm_names = [_decode_gb2312(name_block, idx * 16) for idx in range(16)]
-    am_names = [
-        _decode_gb2312(name_block, 256 + idx * 16) for idx in range(16)
-    ]
-    ssb_names = [
-        _decode_gb2312(name_block, 512 + idx * 16) for idx in range(16)
-    ]
+    # Each name has a 16-byte slot, unlike the 12 of a channel name.
+    fm_names, am_names, ssb_names = (
+        [_decode_gb2312(name_block, base + idx * 16, max_len=16)
+         for idx in range(16)]
+        for base in (0, 256, 512))
 
     def _scale_freq(value: int) -> Optional[int]:
         if value in (0, 0xFFFF):
