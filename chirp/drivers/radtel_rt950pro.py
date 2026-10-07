@@ -4227,7 +4227,8 @@ class RT950ProRadio(chirp_common.CloneModeRadio):
         mem.name = (channel.name or "").rstrip()
         self._apply_offset(mem, channel)
         self._apply_tones(mem, channel)
-        if channel.rx_modulation is Modulation.AM:
+        if (channel.rx_modulation is Modulation.AM or
+                _AIRBAND[0] <= channel.rx_hz <= _AIRBAND[1]):
             mem.mode = "AM"
         else:
             mem.mode = "NFM" if channel.bandwidth is Bandwidth.NARROW else "FM"
@@ -4304,6 +4305,8 @@ class RT950ProRadio(chirp_common.CloneModeRadio):
         mem.tmode = ""
 
     def _apply_memory_to_channel(self, mem, channel: ChannelRecord) -> None:
+        was_airband = (channel.rx_hz is not None and
+                       _AIRBAND[0] <= channel.rx_hz <= _AIRBAND[1])
         channel.rx_hz = _channel_name_hz(mem.freq)
         channel.tx_hz = _channel_name_hz(_tx_freq(mem))
         channel.name = (mem.name or "").rstrip()
@@ -4327,9 +4330,13 @@ class RT950ProRadio(chirp_common.CloneModeRadio):
 
         # CHIRP has no narrow AM, so AM keeps the bandwidth already stored.
         if in_airband:
-            # Airband: AM only, TX disabled
-            channel.rx_modulation = Modulation.AM
-            channel.tx_enabled = False
+            # The radio receives AM here whatever the flags say, and its own
+            # airband channels carry neither the AM flag nor a cleared bit 1
+            # (CPS-made ones do). So keep what an airband channel holds and
+            # only set up one that is new to the band, the way the CPS does.
+            if not was_airband:
+                channel.rx_modulation = Modulation.AM
+                channel.tx_enabled = False
         elif in_low_hf:
             # Low HF: FM only
             channel.rx_modulation = Modulation.FM
