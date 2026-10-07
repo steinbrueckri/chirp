@@ -557,7 +557,13 @@ class ChannelRecord:
         if self.rx_modulation is Modulation.AM:
             flags |= 0x01
         buf[15] = flags
-        buf[16:20] = _encode_fhss_code(self.fhss_code)
+        stored = self._raw_bytes[16:20]
+        if stored and _decode_fhss_code(stored) == self.fhss_code:
+            # Several byte patterns mean "no FHSS" (the radio writes 00s,
+            # empty slots hold FFs); keep the one that is there.
+            buf[16:20] = stored
+        else:
+            buf[16:20] = _encode_fhss_code(self.fhss_code)
         buf[20:32] = _encode_name(self.name, logger)
         result = bytes(buf)
         self._raw_bytes = result
