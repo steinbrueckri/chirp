@@ -3090,13 +3090,12 @@ _VFO_BAND_CHOICES = [
     ('400-470 MHz', 5),
     ('470-600 MHz', 6),
 ]
+# In the order of the radio's step menu, which is what it stores.
 _VFO_STEP_CHOICES = [
-    ('2.5 kHz', 0),
-    ('5.0 kHz', 1),
-    ('6.25 kHz', 2),
-    ('10.0 kHz', 3),
-    ('12.5 kHz', 4),
-    ('25.0 kHz', 5),
+    (label, index) for index, label in enumerate((
+        '2.5 kHz', '5.0 kHz', '6.25 kHz', '8.33 kHz', '10.0 kHz',
+        '12.5 kHz', '20.0 kHz', '25.0 kHz', '50.0 kHz', '100.0 kHz',
+        '10 Hz', '50 Hz', '100 Hz', '500 Hz'))
 ]
 
 
