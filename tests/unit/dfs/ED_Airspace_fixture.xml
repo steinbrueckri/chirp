@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Fixture with invented data in the structure of a DFS AIXM 5.1.1 airspace dataset.
+  Covers the geometry constructs the importer has to handle: a stroked polygon, a circle by
+  centre point, and a sector aggregated from two contributing airspaces.
+
+  Every identifier, name, frequency and position here is invented. Only the structure
+  follows the published format, so the importers can be tested without reproducing any
+  part of a DFS dataset.
+-->
+<message:AIXMBasicMessage
+    xmlns:message="http://www.aixm.aero/schema/5.1.1/message"
+    xmlns:aixm="http://www.aixm.aero/schema/5.1.1"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    gml:id="ID_01">
+
+  <message:hasMember>
+    <aixm:Airspace gml:id="id.aaaa0001-0000-0000-0000-000000000001">
+      <gml:identifier codeSpace="urn:uuid:">aaaa0001-0000-0000-0000-000000000001</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:AirspaceTimeSlice gml:id="id.ts.aaaa0001">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.aaaa0001">
+              <gml:beginPosition>2026-08-06T00:00:00Z</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00Z</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:type>CTR</aixm:type>
+          <aixm:designator>ZZBR</aixm:designator>
+          <aixm:localType xsi:nil="true" nilReason="unknown"/>
+          <aixm:name>BREE</aixm:name>
+          <aixm:class>
+            <aixm:AirspaceLayerClass gml:id="id.ts.alc.aaaa0001">
+              <aixm:classification>D</aixm:classification>
+            </aixm:AirspaceLayerClass>
+          </aixm:class>
+          <aixm:geometryComponent>
+            <aixm:AirspaceGeometryComponent gml:id="id.asegeomcomp.aaaa0001">
+              <aixm:theAirspaceVolume>
+                <aixm:AirspaceVolume gml:id="id.asevol.aaaa0001">
+                  <aixm:upperLimit uom="FT">2500</aixm:upperLimit>
+                  <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                  <aixm:lowerLimit uom="FT">0</aixm:lowerLimit>
+                  <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                  <aixm:horizontalProjection>
+                    <aixm:Surface gml:id="ID_SURF_0001" srsName="urn:ogc:def:crs:EPSG::4326">
+                      <gml:patches>
+                        <gml:PolygonPatch>
+                          <gml:exterior>
+                            <gml:Ring>
+                              <gml:curveMember>
+                                <aixm:Curve gml:id="ID_CURV_0001">
+                                  <gml:segments>
+                                    <gml:CircleByCenterPoint numArc="1">
+                                      <gml:pos>51.050000 11.000000</gml:pos>
+                                      <gml:radius uom="[nmi_i]">8.0</gml:radius>
+                                    </gml:CircleByCenterPoint>
+                                  </gml:segments>
+                                </aixm:Curve>
+                              </gml:curveMember>
+                            </gml:Ring>
+                          </gml:exterior>
+                        </gml:PolygonPatch>
+                      </gml:patches>
+                    </aixm:Surface>
+                  </aixm:horizontalProjection>
+                </aixm:AirspaceVolume>
+              </aixm:theAirspaceVolume>
+            </aixm:AirspaceGeometryComponent>
+          </aixm:geometryComponent>
+        </aixm:AirspaceTimeSlice>
+      </aixm:timeSlice>
+    </aixm:Airspace>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:Airspace gml:id="id.aaaa0002-0000-0000-0000-000000000002">
+      <gml:identifier codeSpace="urn:uuid:">aaaa0002-0000-0000-0000-000000000002</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:AirspaceTimeSlice gml:id="id.ts.aaaa0002">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.aaaa0002">
+              <gml:beginPosition>2026-08-06T00:00:00Z</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00Z</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:type>SECTOR</aixm:type>
+          <aixm:designator>ZZRV03</aixm:designator>
+          <aixm:localType>FLIGHT INFORMATION SECTOR</aixm:localType>
+          <aixm:name>RIVENDELL INFORMATION SECTOR 3</aixm:name>
+          <aixm:geometryComponent>
+            <aixm:AirspaceGeometryComponent gml:id="id.asegeomcomp.aaaa0002">
+              <aixm:theAirspaceVolume>
+                <aixm:AirspaceVolume gml:id="id.asevol.aaaa0002">
+                  <aixm:upperLimit uom="FL">245</aixm:upperLimit>
+                  <aixm:upperLimitReference>STD</aixm:upperLimitReference>
+                  <aixm:lowerLimit uom="FT">2500</aixm:lowerLimit>
+                  <aixm:lowerLimitReference>MSL</aixm:lowerLimitReference>
+                  <aixm:horizontalProjection>
+                    <aixm:Surface gml:id="ID_SURF_0002" srsName="urn:ogc:def:crs:EPSG::4326">
+                      <gml:patches>
+                        <gml:PolygonPatch>
+                          <gml:exterior>
+                            <gml:Ring>
+                              <gml:curveMember>
+                                <aixm:Curve gml:id="ID_CURV_0002">
+                                  <gml:segments>
+                                    <gml:GeodesicString interpolation="geodesic">
+                                      <gml:pos>50.000000 9.000000</gml:pos>
+                                      <gml:pos>51.800000 9.000000</gml:pos>
+                                      <gml:pos>51.800000 12.000000</gml:pos>
+                                      <gml:pos>50.000000 12.000000</gml:pos>
+                                      <gml:pos>50.000000 9.000000</gml:pos>
+                                    </gml:GeodesicString>
+                                  </gml:segments>
+                                </aixm:Curve>
+                              </gml:curveMember>
+                            </gml:Ring>
+                          </gml:exterior>
+                        </gml:PolygonPatch>
+                      </gml:patches>
+                    </aixm:Surface>
+                  </aixm:horizontalProjection>
+                </aixm:AirspaceVolume>
+              </aixm:theAirspaceVolume>
+            </aixm:AirspaceGeometryComponent>
+          </aixm:geometryComponent>
+        </aixm:AirspaceTimeSlice>
+      </aixm:timeSlice>
+    </aixm:Airspace>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:Airspace gml:id="id.aaaa0003-0000-0000-0000-000000000003">
+      <gml:identifier codeSpace="urn:uuid:">aaaa0003-0000-0000-0000-000000000003</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:AirspaceTimeSlice gml:id="id.ts.aaaa0003">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.aaaa0003">
+              <gml:beginPosition>2026-08-06T00:00:00Z</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00Z</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:type>PART</aixm:type>
+          <aixm:designator>ZZMR24A</aixm:designator>
+          <aixm:name>MORIA NORTH</aixm:name>
+          <aixm:geometryComponent>
+            <aixm:AirspaceGeometryComponent gml:id="id.asegeomcomp.aaaa0003">
+              <aixm:theAirspaceVolume>
+                <aixm:AirspaceVolume gml:id="id.asevol.aaaa0003">
+                  <aixm:upperLimit uom="FL">660</aixm:upperLimit>
+                  <aixm:upperLimitReference>STD</aixm:upperLimitReference>
+                  <aixm:lowerLimit uom="FL">245</aixm:lowerLimit>
+                  <aixm:lowerLimitReference>STD</aixm:lowerLimitReference>
+                  <aixm:horizontalProjection>
+                    <aixm:Surface gml:id="ID_SURF_0003" srsName="urn:ogc:def:crs:EPSG::4326">
+                      <gml:patches>
+                        <gml:PolygonPatch>
+                          <gml:exterior>
+                            <gml:Ring>
+                              <gml:curveMember>
+                                <aixm:Curve gml:id="ID_CURV_0003">
+                                  <gml:segments>
+                                    <gml:GeodesicString interpolation="geodesic">
+                                      <gml:posList>51.000000 9.000000 51.800000 9.000000 51.800000 12.000000 51.000000 12.000000 51.000000 9.000000</gml:posList>
+                                    </gml:GeodesicString>
+                                  </gml:segments>
+                                </aixm:Curve>
+                              </gml:curveMember>
+                            </gml:Ring>
+                          </gml:exterior>
+                        </gml:PolygonPatch>
+                      </gml:patches>
+                    </aixm:Surface>
+                  </aixm:horizontalProjection>
+                </aixm:AirspaceVolume>
+              </aixm:theAirspaceVolume>
+            </aixm:AirspaceGeometryComponent>
+          </aixm:geometryComponent>
+        </aixm:AirspaceTimeSlice>
+      </aixm:timeSlice>
+    </aixm:Airspace>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:Airspace gml:id="id.aaaa0004-0000-0000-0000-000000000004">
+      <gml:identifier codeSpace="urn:uuid:">aaaa0004-0000-0000-0000-000000000004</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:AirspaceTimeSlice gml:id="id.ts.aaaa0004">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.aaaa0004">
+              <gml:beginPosition>2026-08-06T00:00:00Z</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00Z</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:type>PART</aixm:type>
+          <aixm:designator>ZZMR24B</aixm:designator>
+          <aixm:name>MORIA SOUTH</aixm:name>
+          <aixm:geometryComponent>
+            <aixm:AirspaceGeometryComponent gml:id="id.asegeomcomp.aaaa0004">
+              <aixm:theAirspaceVolume>
+                <aixm:AirspaceVolume gml:id="id.asevol.aaaa0004">
+                  <aixm:upperLimit uom="FL">660</aixm:upperLimit>
+                  <aixm:upperLimitReference>STD</aixm:upperLimitReference>
+                  <aixm:lowerLimit uom="FL">245</aixm:lowerLimit>
+                  <aixm:lowerLimitReference>STD</aixm:lowerLimitReference>
+                  <aixm:horizontalProjection>
+                    <aixm:Surface gml:id="ID_SURF_0004" srsName="urn:ogc:def:crs:EPSG::4326">
+                      <gml:patches>
+                        <gml:PolygonPatch>
+                          <gml:exterior>
+                            <gml:Ring>
+                              <gml:curveMember>
+                                <aixm:Curve gml:id="ID_CURV_0004">
+                                  <gml:segments>
+                                    <gml:GeodesicString interpolation="geodesic">
+                                      <gml:posList>50.000000 9.000000 51.000000 9.000000 51.000000 12.000000 50.000000 12.000000 50.000000 9.000000</gml:posList>
+                                    </gml:GeodesicString>
+                                  </gml:segments>
+                                </aixm:Curve>
+                              </gml:curveMember>
+                            </gml:Ring>
+                          </gml:exterior>
+                        </gml:PolygonPatch>
+                      </gml:patches>
+                    </aixm:Surface>
+                  </aixm:horizontalProjection>
+                </aixm:AirspaceVolume>
+              </aixm:theAirspaceVolume>
+            </aixm:AirspaceGeometryComponent>
+          </aixm:geometryComponent>
+        </aixm:AirspaceTimeSlice>
+      </aixm:timeSlice>
+    </aixm:Airspace>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:Airspace gml:id="id.aaaa0005-0000-0000-0000-000000000005">
+      <gml:identifier codeSpace="urn:uuid:">aaaa0005-0000-0000-0000-000000000005</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:AirspaceTimeSlice gml:id="id.ts.aaaa0005">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.aaaa0005">
+              <gml:beginPosition>2026-08-06T00:00:00Z</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00Z</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:type>SECTOR</aixm:type>
+          <aixm:designator>ZZMR24</aixm:designator>
+          <aixm:name>MORIA</aixm:name>
+          <aixm:geometryComponent>
+            <aixm:AirspaceGeometryComponent gml:id="id.asegeomcomp.aaaa0005-10">
+              <aixm:operation>BASE</aixm:operation>
+              <aixm:operationSequence>1</aixm:operationSequence>
+              <aixm:theAirspaceVolume>
+                <aixm:AirspaceVolume gml:id="id.asevol.aaaa0005-10">
+                  <aixm:contributorAirspace>
+                    <aixm:AirspaceVolumeDependency gml:id="id.avdep.aaaa0005-10">
+                      <aixm:dependency>FULL_GEOMETRY</aixm:dependency>
+                      <aixm:theAirspace xlink:href="urn:uuid:aaaa0003-0000-0000-0000-000000000003" xlink:title="ZZMR24A"/>
+                    </aixm:AirspaceVolumeDependency>
+                  </aixm:contributorAirspace>
+                </aixm:AirspaceVolume>
+              </aixm:theAirspaceVolume>
+            </aixm:AirspaceGeometryComponent>
+          </aixm:geometryComponent>
+          <aixm:geometryComponent>
+            <aixm:AirspaceGeometryComponent gml:id="id.asegeomcomp.aaaa0005-20">
+              <aixm:operation>UNION</aixm:operation>
+              <aixm:operationSequence>2</aixm:operationSequence>
+              <aixm:theAirspaceVolume>
+                <aixm:AirspaceVolume gml:id="id.asevol.aaaa0005-20">
+                  <aixm:contributorAirspace>
+                    <aixm:AirspaceVolumeDependency gml:id="id.avdep.aaaa0005-20">
+                      <aixm:dependency>FULL_GEOMETRY</aixm:dependency>
+                      <aixm:theAirspace xlink:href="urn:uuid:aaaa0004-0000-0000-0000-000000000004" xlink:title="ZZMR24B"/>
+                    </aixm:AirspaceVolumeDependency>
+                  </aixm:contributorAirspace>
+                </aixm:AirspaceVolume>
+              </aixm:theAirspaceVolume>
+            </aixm:AirspaceGeometryComponent>
+          </aixm:geometryComponent>
+        </aixm:AirspaceTimeSlice>
+      </aixm:timeSlice>
+    </aixm:Airspace>
+  </message:hasMember>
+</message:AIXMBasicMessage>

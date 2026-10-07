@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Fixture with invented data in the structure of a DFS AIXM 5.1.1 aerodrome dataset (ED_AirportHeliport). Includes an international airport, a small airfield without an ICAO
+  location indicator style designator, and a heliport, so the importer's identifier handling
+  is exercised.
+
+  Every identifier, name, frequency and position here is invented. Only the structure
+  follows the published format, so the importers can be tested without reproducing any
+  part of a DFS dataset.
+-->
+<message:AIXMBasicMessage
+    xmlns:message="http://www.aixm.aero/schema/5.1.1/message"
+    xmlns:aixm="http://www.aixm.aero/schema/5.1.1"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    gml:id="ID_01">
+
+  <message:hasMember>
+    <aixm:AirportHeliport gml:id="id.cccc0001-0000-0000-0000-000000000001">
+      <gml:identifier codeSpace="urn:uuid:">cccc0001-0000-0000-0000-000000000001</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:AirportHeliportTimeSlice gml:id="id.ts.cccc0001">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.cccc0001">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:designator>ZZBR</aixm:designator>
+          <aixm:name>BREE</aixm:name>
+          <aixm:locationIndicatorICAO>ZZBR</aixm:locationIndicatorICAO>
+          <aixm:designatorIATA>BRE</aixm:designatorIATA>
+          <aixm:type>AD</aixm:type>
+          <aixm:fieldElevation uom="FT">1000</aixm:fieldElevation>
+          <aixm:ARP>
+            <aixm:ElevatedPoint gml:id="id.ts.arp.cccc0001" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>51.050000 11.000000</gml:pos>
+              <aixm:elevation uom="FT">1000</aixm:elevation>
+            </aixm:ElevatedPoint>
+          </aixm:ARP>
+        </aixm:AirportHeliportTimeSlice>
+      </aixm:timeSlice>
+    </aixm:AirportHeliport>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:AirportHeliport gml:id="id.cccc0002-0000-0000-0000-000000000002">
+      <gml:identifier codeSpace="urn:uuid:">cccc0002-0000-0000-0000-000000000002</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:AirportHeliportTimeSlice gml:id="id.ts.cccc0002">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.cccc0002">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:designator>ZZHB</aixm:designator>
+          <aixm:name>HOBBITON</aixm:name>
+          <aixm:locationIndicatorICAO>ZZHB</aixm:locationIndicatorICAO>
+          <aixm:type>AD</aixm:type>
+          <aixm:fieldElevation uom="M">300</aixm:fieldElevation>
+          <aixm:ARP>
+            <aixm:ElevatedPoint gml:id="id.ts.arp.cccc0002" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>50.900000 10.600000</gml:pos>
+            </aixm:ElevatedPoint>
+          </aixm:ARP>
+        </aixm:AirportHeliportTimeSlice>
+      </aixm:timeSlice>
+    </aixm:AirportHeliport>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:AirportHeliport gml:id="id.cccc0003-0000-0000-0000-000000000003">
+      <gml:identifier codeSpace="urn:uuid:">cccc0003-0000-0000-0000-000000000003</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:AirportHeliportTimeSlice gml:id="id.ts.cccc0003">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.cccc0003">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:designator>ZZ0155</aixm:designator>
+          <aixm:name>ESGAROTH</aixm:name>
+          <aixm:locationIndicatorICAO xsi:nil="true" nilReason="unknown"/>
+          <aixm:type>AD</aixm:type>
+          <aixm:ARP>
+            <aixm:ElevatedPoint gml:id="id.ts.arp.cccc0003" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>51.150000 10.700000</gml:pos>
+            </aixm:ElevatedPoint>
+          </aixm:ARP>
+        </aixm:AirportHeliportTimeSlice>
+      </aixm:timeSlice>
+    </aixm:AirportHeliport>
+  </message:hasMember>
+</message:AIXMBasicMessage>

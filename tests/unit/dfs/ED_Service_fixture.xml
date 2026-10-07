@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Fixture with invented data in the structure of a DFS AIXM 5.1.1 service dataset.
+  Includes the cases the importer has to survive: a unit-provided service, callsigns in two
+  languages, a service serving an airspace, one serving an airport, a duplicate frequency and
+  a service whose channel reference cannot be resolved.
+
+  Every identifier, name, frequency and position here is invented. Only the structure
+  follows the published format, so the importers can be tested without reproducing any
+  part of a DFS dataset.
+-->
+<message:AIXMBasicMessage
+    xmlns:message="http://www.aixm.aero/schema/5.1.1/message"
+    xmlns:aixm="http://www.aixm.aero/schema/5.1.1"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    gml:id="ID_01">
+
+  <message:hasMember>
+    <aixm:Unit gml:id="id.bbbb0001-0000-0000-0000-000000000001">
+      <gml:identifier codeSpace="urn:uuid:">bbbb0001-0000-0000-0000-000000000001</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:UnitTimeSlice gml:id="id.ts.bbbb0001">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.bbbb0001">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:name>ZZBR TWR</aixm:name>
+          <aixm:type>TWR</aixm:type>
+          <aixm:compliantICAO>YES</aixm:compliantICAO>
+          <aixm:position>
+            <aixm:ElevatedPoint gml:id="id.ts.ept.bbbb0001" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>51.050000 11.000000</gml:pos>
+            </aixm:ElevatedPoint>
+          </aixm:position>
+          <aixm:airportLocation xlink:href="urn:uuid:cccc0001-0000-0000-0000-000000000001" xlink:title="ZZBR"/>
+        </aixm:UnitTimeSlice>
+      </aixm:timeSlice>
+    </aixm:Unit>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:Unit gml:id="id.bbbb0002-0000-0000-0000-000000000002">
+      <gml:identifier codeSpace="urn:uuid:">bbbb0002-0000-0000-0000-000000000002</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:UnitTimeSlice gml:id="id.ts.bbbb0002">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.bbbb0002">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:name>ZZMR RAD</aixm:name>
+          <aixm:type>ACC</aixm:type>
+          <aixm:position>
+            <aixm:ElevatedPoint gml:id="id.ts.ept.bbbb0002" srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:pos>50.100000 8.600000</gml:pos>
+            </aixm:ElevatedPoint>
+          </aixm:position>
+        </aixm:UnitTimeSlice>
+      </aixm:timeSlice>
+    </aixm:Unit>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:RadioCommunicationChannel gml:id="id.dddd0001-0000-0000-0000-000000000001">
+      <gml:identifier codeSpace="urn:uuid:">dddd0001-0000-0000-0000-000000000001</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:RadioCommunicationChannelTimeSlice gml:id="id.ts.dddd0001">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.dddd0001">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:rank>PRIMARY</aixm:rank>
+          <aixm:frequencyTransmission uom="MHZ">118.505</aixm:frequencyTransmission>
+          <aixm:frequencyReception xsi:nil="true" nilReason="unknown"/>
+          <aixm:annotation>
+            <aixm:Note gml:id="id.ts.note.dddd0001-1">
+              <aixm:propertyName>availability</aixm:propertyName>
+              <aixm:purpose>DESCRIPTION</aixm:purpose>
+              <aixm:translatedNote>
+                <aixm:LinguisticNote gml:id="id.ts.note.dddd0001-2">
+                  <aixm:note>MON-FRI 0600-2100</aixm:note>
+                </aixm:LinguisticNote>
+              </aixm:translatedNote>
+            </aixm:Note>
+          </aixm:annotation>
+        </aixm:RadioCommunicationChannelTimeSlice>
+      </aixm:timeSlice>
+    </aixm:RadioCommunicationChannel>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:RadioCommunicationChannel gml:id="id.dddd0002-0000-0000-0000-000000000002">
+      <gml:identifier codeSpace="urn:uuid:">dddd0002-0000-0000-0000-000000000002</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:RadioCommunicationChannelTimeSlice gml:id="id.ts.dddd0002">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.dddd0002">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:rank>PRIMARY</aixm:rank>
+          <aixm:frequencyTransmission uom="MHZ">119.155</aixm:frequencyTransmission>
+          <aixm:annotation>
+            <aixm:Note gml:id="id.ts.note.dddd0002-1">
+              <aixm:propertyName>availability</aixm:propertyName>
+              <aixm:purpose>DESCRIPTION</aixm:purpose>
+              <aixm:translatedNote>
+                <aixm:LinguisticNote gml:id="id.ts.note.dddd0002-2">
+                  <aixm:note>H24</aixm:note>
+                </aixm:LinguisticNote>
+              </aixm:translatedNote>
+            </aixm:Note>
+          </aixm:annotation>
+        </aixm:RadioCommunicationChannelTimeSlice>
+      </aixm:timeSlice>
+    </aixm:RadioCommunicationChannel>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:RadioCommunicationChannel gml:id="id.dddd0003-0000-0000-0000-000000000003">
+      <gml:identifier codeSpace="urn:uuid:">dddd0003-0000-0000-0000-000000000003</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:RadioCommunicationChannelTimeSlice gml:id="id.ts.dddd0003">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.dddd0003">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:rank>PRIMARY</aixm:rank>
+          <aixm:frequencyTransmission uom="MHZ">128.005</aixm:frequencyTransmission>
+        </aixm:RadioCommunicationChannelTimeSlice>
+      </aixm:timeSlice>
+    </aixm:RadioCommunicationChannel>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:RadioCommunicationChannel gml:id="id.dddd0004-0000-0000-0000-000000000004">
+      <gml:identifier codeSpace="urn:uuid:">dddd0004-0000-0000-0000-000000000004</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:RadioCommunicationChannelTimeSlice gml:id="id.ts.dddd0004">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.dddd0004">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:rank>PRIMARY</aixm:rank>
+          <aixm:frequencyTransmission uom="MHZ">122.505</aixm:frequencyTransmission>
+        </aixm:RadioCommunicationChannelTimeSlice>
+      </aixm:timeSlice>
+    </aixm:RadioCommunicationChannel>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:RadioCommunicationChannel gml:id="id.dddd0005-0000-0000-0000-000000000005">
+      <gml:identifier codeSpace="urn:uuid:">dddd0005-0000-0000-0000-000000000005</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:RadioCommunicationChannelTimeSlice gml:id="id.ts.dddd0005">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.dddd0005">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:rank>SECONDARY</aixm:rank>
+          <aixm:frequencyTransmission uom="MHZ">250.005</aixm:frequencyTransmission>
+        </aixm:RadioCommunicationChannelTimeSlice>
+      </aixm:timeSlice>
+    </aixm:RadioCommunicationChannel>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:RadioCommunicationChannel gml:id="id.dddd0006-0000-0000-0000-000000000006">
+      <gml:identifier codeSpace="urn:uuid:">dddd0006-0000-0000-0000-000000000006</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:RadioCommunicationChannelTimeSlice gml:id="id.ts.dddd0006">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.dddd0006">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:rank>PRIMARY</aixm:rank>
+          <aixm:frequencyTransmission uom="MHZ">118.910</aixm:frequencyTransmission>
+        </aixm:RadioCommunicationChannelTimeSlice>
+      </aixm:timeSlice>
+    </aixm:RadioCommunicationChannel>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:AirTrafficControlService gml:id="id.eeee0001-0000-0000-0000-000000000001">
+      <gml:identifier codeSpace="urn:uuid:">eeee0001-0000-0000-0000-000000000001</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:AirTrafficControlServiceTimeSlice gml:id="id.ts.eeee0001">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.eeee0001">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:flightOperations>ALL</aixm:flightOperations>
+          <aixm:name>ZZBR TWR</aixm:name>
+          <aixm:serviceProvider xlink:href="urn:uuid:bbbb0001-0000-0000-0000-000000000001"/>
+          <aixm:call-sign>
+            <aixm:CallsignDetail gml:id="id.ts.cd.eeee0001-1">
+              <aixm:callSign>BREE TOWER</aixm:callSign>
+              <aixm:language>eng</aixm:language>
+            </aixm:CallsignDetail>
+          </aixm:call-sign>
+          <aixm:call-sign>
+            <aixm:CallsignDetail gml:id="id.ts.cd.eeee0001-2">
+              <aixm:callSign>BREE TURM</aixm:callSign>
+              <aixm:language>ger</aixm:language>
+            </aixm:CallsignDetail>
+          </aixm:call-sign>
+          <aixm:radioCommunication xlink:href="urn:uuid:dddd0001-0000-0000-0000-000000000001" xlink:title="118.505 MHZ"/>
+          <aixm:type>TWR</aixm:type>
+          <aixm:clientAirport xlink:href="urn:uuid:cccc0001-0000-0000-0000-000000000001" xlink:title="ZZBR"/>
+        </aixm:AirTrafficControlServiceTimeSlice>
+      </aixm:timeSlice>
+    </aixm:AirTrafficControlService>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:AirTrafficControlService gml:id="id.eeee0002-0000-0000-0000-000000000002">
+      <gml:identifier codeSpace="urn:uuid:">eeee0002-0000-0000-0000-000000000002</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:AirTrafficControlServiceTimeSlice gml:id="id.ts.eeee0002">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.eeee0002">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:name>ZZMR RAD</aixm:name>
+          <aixm:serviceProvider xlink:href="urn:uuid:bbbb0002-0000-0000-0000-000000000002"/>
+          <aixm:call-sign>
+            <aixm:CallsignDetail gml:id="id.ts.cd.eeee0002-1">
+              <aixm:callSign>MORIA RADAR</aixm:callSign>
+              <aixm:language>eng</aixm:language>
+            </aixm:CallsignDetail>
+          </aixm:call-sign>
+          <aixm:radioCommunication xlink:href="urn:uuid:dddd0003-0000-0000-0000-000000000003" xlink:title="128.005 MHZ"/>
+          <aixm:radioCommunication xlink:href="urn:uuid:dddd0005-0000-0000-0000-000000000005" xlink:title="250.005 MHZ"/>
+          <aixm:radioCommunication xlink:href="urn:uuid:00000000-dead-beef-0000-000000000000" xlink:title="missing"/>
+          <aixm:type>ACS</aixm:type>
+          <aixm:clientAirspace xlink:href="urn:uuid:aaaa0005-0000-0000-0000-000000000005" xlink:title="ZZMR24"/>
+        </aixm:AirTrafficControlServiceTimeSlice>
+      </aixm:timeSlice>
+    </aixm:AirTrafficControlService>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:InformationService gml:id="id.eeee0003-0000-0000-0000-000000000003">
+      <gml:identifier codeSpace="urn:uuid:">eeee0003-0000-0000-0000-000000000003</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:InformationServiceTimeSlice gml:id="id.ts.eeee0003">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.eeee0003">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:name>ZZRV FIS</aixm:name>
+          <aixm:call-sign>
+            <aixm:CallsignDetail gml:id="id.ts.cd.eeee0003-1">
+              <aixm:callSign>RIVENDELL INFORMATION</aixm:callSign>
+              <aixm:language>eng</aixm:language>
+            </aixm:CallsignDetail>
+          </aixm:call-sign>
+          <aixm:radioCommunication xlink:href="urn:uuid:dddd0002-0000-0000-0000-000000000002" xlink:title="119.155 MHZ"/>
+          <aixm:type>FIS</aixm:type>
+          <aixm:clientAirspace xlink:href="urn:uuid:aaaa0002-0000-0000-0000-000000000002" xlink:title="ZZRV03"/>
+        </aixm:InformationServiceTimeSlice>
+      </aixm:timeSlice>
+    </aixm:InformationService>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:InformationService gml:id="id.eeee0004-0000-0000-0000-000000000004">
+      <gml:identifier codeSpace="urn:uuid:">eeee0004-0000-0000-0000-000000000004</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:InformationServiceTimeSlice gml:id="id.ts.eeee0004">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.eeee0004">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:name>ZZBR ATIS</aixm:name>
+          <aixm:radioCommunication xlink:href="urn:uuid:dddd0004-0000-0000-0000-000000000004" xlink:title="122.505 MHZ"/>
+          <aixm:type>ATIS</aixm:type>
+          <aixm:clientAirport xlink:href="urn:uuid:cccc0001-0000-0000-0000-000000000001" xlink:title="ZZBR"/>
+        </aixm:InformationServiceTimeSlice>
+      </aixm:timeSlice>
+    </aixm:InformationService>
+  </message:hasMember>
+
+  <message:hasMember>
+    <aixm:InformationService gml:id="id.eeee0005-0000-0000-0000-000000000005">
+      <gml:identifier codeSpace="urn:uuid:">eeee0005-0000-0000-0000-000000000005</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:InformationServiceTimeSlice gml:id="id.ts.eeee0005">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.eeee0005">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:name>ZZHB AFIS</aixm:name>
+          <aixm:call-sign>
+            <aixm:CallsignDetail gml:id="id.ts.cd.eeee0005-1">
+              <aixm:callSign>HOBBITON INFO</aixm:callSign>
+              <aixm:language>ger</aixm:language>
+            </aixm:CallsignDetail>
+          </aixm:call-sign>
+          <aixm:radioCommunication xlink:href="urn:uuid:dddd0006-0000-0000-0000-000000000006" xlink:title="118.910 MHZ"/>
+          <aixm:type>AFIS</aixm:type>
+          <aixm:clientAirport xlink:href="urn:uuid:cccc0002-0000-0000-0000-000000000002" xlink:title="ZZHB"/>
+        </aixm:InformationServiceTimeSlice>
+      </aixm:timeSlice>
+    </aixm:InformationService>
+  </message:hasMember>
+  <message:hasMember>
+    <aixm:RadioCommunicationChannel gml:id="id.dddd0007-0000-0000-0000-000000000007">
+      <gml:identifier codeSpace="urn:uuid:">dddd0007-0000-0000-0000-000000000007</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:RadioCommunicationChannelTimeSlice gml:id="id.ts.dddd0007">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.dddd0007">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:rank>PRIMARY</aixm:rank>
+          <aixm:frequencyTransmission uom="MHZ">123.005</aixm:frequencyTransmission>
+        </aixm:RadioCommunicationChannelTimeSlice>
+      </aixm:timeSlice>
+    </aixm:RadioCommunicationChannel>
+  </message:hasMember>
+
+  <!-- A landing site with no ICAO location indicator: DFS references it by designator. -->
+  <message:hasMember>
+    <aixm:InformationService gml:id="id.eeee0006-0000-0000-0000-000000000006">
+      <gml:identifier codeSpace="urn:uuid:">eeee0006-0000-0000-0000-000000000006</gml:identifier>
+      <aixm:timeSlice>
+        <aixm:InformationServiceTimeSlice gml:id="id.ts.eeee0006">
+          <gml:validTime>
+            <gml:TimePeriod gml:id="id.ts.vt.eeee0006">
+              <gml:beginPosition>2026-08-06T00:00:00</gml:beginPosition>
+              <gml:endPosition indeterminatePosition="before">2026-09-03T00:00:00</gml:endPosition>
+            </gml:TimePeriod>
+          </gml:validTime>
+          <aixm:interpretation>BASELINE</aixm:interpretation>
+          <aixm:name>ZZ0155 INFO</aixm:name>
+          <aixm:call-sign>
+            <aixm:CallsignDetail gml:id="id.ts.cd.eeee0006-1">
+              <aixm:callSign>ESGAROTH INFO</aixm:callSign>
+              <aixm:language>ger</aixm:language>
+            </aixm:CallsignDetail>
+          </aixm:call-sign>
+          <aixm:radioCommunication xlink:href="urn:uuid:dddd0007-0000-0000-0000-000000000007" xlink:title="123.005 MHZ"/>
+          <aixm:type>INFO</aixm:type>
+          <aixm:clientAirport xlink:href="urn:uuid:cccc0003-0000-0000-0000-000000000003" xlink:title="ZZ0155"/>
+        </aixm:InformationServiceTimeSlice>
+      </aixm:timeSlice>
+    </aixm:InformationService>
+  </message:hasMember>
+</message:AIXMBasicMessage>

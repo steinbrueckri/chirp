@@ -32,6 +32,7 @@ from chirp.sources import przemienniki_net
 from chirp.sources import przemienniki_eu
 from chirp.sources import mapy73pl
 from chirp.sources import amsats
+from chirp.sources import dfs
 from chirp.wxui import common
 from chirp.wxui import config
 
@@ -932,6 +933,117 @@ class PrzemiennikiEuQueryDialog(QuerySourceDialog):
             params['distance'] = dist
 
         return params
+
+
+class RequiredLatValidator(LatValidator):
+    OPTIONAL = False
+
+
+class RequiredLonValidator(LonValidator):
+    OPTIONAL = False
+
+
+class RadiusValidator(DistValidator):
+    OPTIONAL = False
+    MIN = 1
+    MAX = 500
+
+
+class NameLengthValidator(NumberValidator):
+    THING = _('Name length')
+    MIN = dfs.MIN_NAME_LENGTH
+    MAX = 32
+    OPTIONAL = False
+
+
+class DFSQueryDialog(QuerySourceDialog):
+    NAME = 'DFS'
+    _section = 'dfs'
+    _steps = ['%g kHz' % step for step in dfs.TUNING_STEPS_KHZ]
+
+    def _add_grid(self, grid, label, widget):
+        grid.Add(wx.StaticText(widget.GetParent(), label=label),
+                 border=20, flag=wx.ALIGN_CENTER | wx.RIGHT | wx.LEFT)
+        grid.Add(widget, 1, border=20, flag=wx.EXPAND | wx.RIGHT | wx.LEFT)
+
+    def build(self):
+        vbox = wx.BoxSizer(wx.VERTICAL)
+        self.SetSizer(vbox)
+        panel = wx.Panel(self)
+        vbox.Add(panel, 1, flag=wx.EXPAND | wx.ALL, border=20)
+        grid = wx.FlexGridSizer(2, 5, 0)
+        grid.AddGrowableCol(1)
+        panel.SetSizer(grid)
+
+        # The position is shared with the other sources that ask for one.
+        self._lat = wx.TextCtrl(panel,
+                                value=CONF.get('lat', 'repeaterbook') or '',
+                                validator=RequiredLatValidator())
+        self._lat.SetHint('50.9480')
+        self._add_grid(grid, _('Latitude'), self._lat)
+        self._lon = wx.TextCtrl(panel,
+                                value=CONF.get('lon', 'repeaterbook') or '',
+                                validator=RequiredLonValidator())
+        self._lon.SetHint('10.7080')
+        self._add_grid(grid, _('Longitude'), self._lon)
+
+        self._radius = wx.TextCtrl(
+            panel, value=CONF.get('radius', self._section) or '50',
+            validator=RadiusValidator())
+        self._radius.SetToolTip(_('Include aerodromes and sectors up to '
+                                  'this distance (km) from the position'))
+        self._add_grid(grid, _('Radius (km)'), self._radius)
+
+        self._step = wx.Choice(panel, choices=self._steps)
+        prev = CONF.get('step', self._section)
+        self._step.SetStringSelection(
+            prev if prev in self._steps else self._steps[0])
+        self._step.SetToolTip(_('Finest tuning step of the radio. 8.33 kHz '
+                                'channels are rounded onto it, or left out '
+                                'where that would land on the neighbouring '
+                                'channel'))
+        self._add_grid(grid, _('Tuning step'), self._step)
+
+        self._name_length = wx.TextCtrl(
+            panel, value=CONF.get('name_length', self._section) or '12',
+            validator=NameLengthValidator())
+        self._name_length.SetToolTip(_('Characters the radio shows of a '
+                                       'memory name; names are shortened to '
+                                       'fit without becoming ambiguous'))
+        self._add_grid(grid, _('Name length'), self._name_length)
+
+        return vbox
+
+    def get_info(self):
+        return _('Published aerodrome and sector frequencies from the '
+                 'German AIP.\n'
+                 'Listening to air traffic control may be restricted '
+                 'where you are (in Germany: § 8 TDDDG).')
+
+    def get_link(self):
+        return 'https://aip.dfs.de/datasets/'
+
+    def do_query(self):
+        CONF.set('lat', self._lat.GetValue(), 'repeaterbook')
+        CONF.set('lon', self._lon.GetValue(), 'repeaterbook')
+        CONF.set('radius', self._radius.GetValue(), self._section)
+        CONF.set('step', self._step.GetStringSelection(), self._section)
+        CONF.set('name_length', self._name_length.GetValue(), self._section)
+        self.result_radio = dfs.DFSRadio()
+        super().do_query()
+
+    def get_params(self):
+        # Runs on the query thread, so it reads what do_query() stored
+        # rather than the controls.
+        return {
+            'lat': float(CONF.get('lat', 'repeaterbook')),
+            'lon': float(CONF.get('lon', 'repeaterbook')),
+            'radius': float(CONF.get('radius', self._section)),
+            'step': dfs.TUNING_STEPS_KHZ[
+                self._steps.index(CONF.get('step', self._section))],
+            'name_length': int(float(CONF.get('name_length',
+                                              self._section))),
+        }
 
 
 class Mapy73PlQueryDialog(QuerySourceDialog):
