@@ -1234,14 +1234,14 @@ class FT70Radio(yaesu_clone.YaesuCloneModeRadio):
                 self._adms_header = f.read(0xED)
                 if b'=ADMS10, Version=1.0.1.0' not in self._adms_header:
                     raise errors.ImageDetectFailed(
-                        'Unsupported version found in ADMS file')
+                        _('Unsupported version found in ADMS file'))
                 LOG.debug('ADMS Header:\n%s',
                           util.hexprint(self._adms_header))
                 self._mmap = memmap.MemoryMapBytes(self._model + f.read())
                 LOG.info('Loaded ADMS file')
             self.process_mmap()
         else:
-            chirp_common.CloneModeRadio.load_mmap(self, filename)
+            super().load_mmap(filename)
 
     def save_mmap(self, filename):
         if filename.lower().endswith(self._adms_ext):
@@ -1252,4 +1252,4 @@ class FT70Radio(yaesu_clone.YaesuCloneModeRadio):
                 f.write(self._mmap.get_packed()[5:])
                 LOG.info('Wrote file')
         else:
-            chirp_common.CloneModeRadio.save_mmap(self, filename)
+            super().save_mmap(filename)

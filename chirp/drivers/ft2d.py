@@ -164,14 +164,14 @@ class FT3D(FT2D):
                 self._adms_header = f.read(0x18C)
                 if b'ADMS11, Version=1.0.0.0' not in self._adms_header:
                     raise errors.ImageDetectFailed(
-                        'Unsupported version found in ADMS file')
+                        _('Unsupported version found in ADMS file'))
                 LOG.debug('ADMS Header:\n%s',
                           util.hexprint(self._adms_header))
                 self._mmap = memmap.MemoryMapBytes(f.read())
                 LOG.info('Loaded ADMS-11 file at offset 0x18C')
             self.process_mmap()
         else:
-            chirp_common.CloneModeRadio.load_mmap(self, filename)
+            super().load_mmap(filename)
 
     def save_mmap(self, filename):
         if filename.lower().endswith(self._adms_ext):
@@ -182,7 +182,7 @@ class FT3D(FT2D):
                 f.write(self._mmap.get_packed())
                 LOG.info('Wrote ADMS-11 file')
         else:
-            chirp_common.CloneModeRadio.save_mmap(self, filename)
+            super().save_mmap(filename)
 
 
 @directory.register
@@ -201,14 +201,14 @@ class FT5D(FT2D):
                 self._adms_header = f.read(0x18C)
                 if b'ADMS14, Version=1.0.' not in self._adms_header:
                     raise errors.ImageDetectFailed(
-                        'Unsupported version found in ADMS file')
+                        _('Unsupported version found in ADMS file'))
                 LOG.debug('ADMS Header:\n%s',
                           util.hexprint(self._adms_header))
                 self._mmap = memmap.MemoryMapBytes(f.read())
                 LOG.info('Loaded ADMS-14 file at offset 0x18C')
             self.process_mmap()
         else:
-            chirp_common.CloneModeRadio.load_mmap(self, filename)
+            super().load_mmap(filename)
 
     def save_mmap(self, filename):
         if filename.lower().endswith(self._adms_ext):
@@ -219,4 +219,4 @@ class FT5D(FT2D):
                 f.write(self._mmap.get_packed())
                 LOG.info('Wrote ADMS-14 file')
         else:
-            chirp_common.CloneModeRadio.save_mmap(self, filename)
+            super().save_mmap(filename)

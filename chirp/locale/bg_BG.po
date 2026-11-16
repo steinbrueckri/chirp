@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CHIRP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-28 09:52-0700\n"
+"POT-Creation-Date: 2026-11-13 18:06-0800\n"
 "PO-Revision-Date: 2025-04-17 10:00+0200\n"
 "Last-Translator: Стоян <stoyanster от гмаил>\n"
 "Language-Team: Bulgarian <dict@ludost.net>\n"
@@ -57,13 +57,18 @@ msgstr[1] "%i записа и преместване блока нагоре"
 msgid "%s %s, row %d"
 msgstr ""
 
-#: ../wxui/main.py:1533
+#: ../wxui/main.py:1632
 #, python-format
 msgid "%s has not been saved. Save before closing?"
 msgstr ""
 "Промените на „%s“ не са запазени.\n"
 "\n"
 "Да бъдат ли запазени преди затваряне?"
+
+#: ../settings.py:267 ../settings.py:391
+#, python-format
+msgid "%s is not valid for this setting"
+msgstr ""
 
 #: ../wxui/bugreport.py:512
 msgid "(Describe what actually happened instead)"
@@ -81,7 +86,7 @@ msgstr "(Опишете какво направихте)"
 msgid "(Has this ever worked before? New radio? Does it work with OEM software?)"
 msgstr "(Работило ли е това устройство някога преди? Нова станция? Работи ли с фабричния софтуер?)"
 
-#: ../wxui/radioinfo.py:52
+#: ../wxui/radioinfo.py:62
 msgid "(none)"
 msgstr "(няма)"
 
@@ -90,7 +95,7 @@ msgstr "(няма)"
 msgid "...and %i more"
 msgstr "…и още %i"
 
-#: ../drivers/ft4.py:738
+#: ../drivers/ft4.py:754
 msgid ""
 "1. Connect programming cable to MIC jack.\n"
 "2. Press OK."
@@ -98,7 +103,7 @@ msgstr ""
 "1. Включете кабела за програмиране в жака за микрофон.\n"
 "2. Натиснете бутона „Добре“."
 
-#: ../drivers/alinco.py:605 ../drivers/alinco.py:614
+#: ../drivers/alinco.py:609 ../drivers/alinco.py:618
 msgid ""
 "1. Ensure your firmware version is 4_10 or higher\n"
 "2. Turn radio off\n"
@@ -186,7 +191,7 @@ msgid ""
 "6. Click OK."
 msgstr ""
 
-#: ../drivers/ft450d.py:430
+#: ../drivers/ft450d.py:436
 msgid ""
 "1. Turn radio off.\n"
 "2. Connect cable to ACC jack.\n"
@@ -207,7 +212,7 @@ msgid ""
 "4. <b>After clicking OK</b>, press the [A] key to send image.\n"
 msgstr ""
 
-#: ../drivers/ft450d.py:439
+#: ../drivers/ft450d.py:445
 msgid ""
 "1. Turn radio off.\n"
 "2. Connect cable to ACC jack.\n"
@@ -419,7 +424,7 @@ msgid ""
 "5. Click OK to send image to radio.\n"
 msgstr ""
 
-#: ../drivers/vx1.py:399
+#: ../drivers/vx1.py:404
 msgid ""
 "1. Turn radio off.\n"
 "2. Connect cable to MIC/SP jack.\n"
@@ -428,7 +433,7 @@ msgid ""
 "5. <b>After clicking OK</b>, press the [DWN] button on radio to send image. The radio will say CLN OUT while downloading.\n"
 msgstr ""
 
-#: ../drivers/vx1.py:407
+#: ../drivers/vx1.py:412
 msgid ""
 "1. Turn radio off.\n"
 "2. Connect cable to MIC/SP jack.\n"
@@ -580,7 +585,7 @@ msgid ""
 "6. Click OK to upload image to device.\n"
 msgstr ""
 
-#: ../drivers/uvb5.py:293 ../drivers/tg_uv2p.py:232 ../drivers/wouxun.py:222
+#: ../drivers/uvb5.py:293 ../drivers/wouxun.py:222 ../drivers/tg_uv2p.py:237
 msgid ""
 "1. Turn radio off.\n"
 "2. Connect cable to mic/spkr connector.\n"
@@ -590,7 +595,7 @@ msgid ""
 "6. Click OK to download image from device.\n"
 msgstr ""
 
-#: ../drivers/uvb5.py:301 ../drivers/tg_uv2p.py:240 ../drivers/wouxun.py:230
+#: ../drivers/uvb5.py:301 ../drivers/wouxun.py:230 ../drivers/tg_uv2p.py:245
 msgid ""
 "1. Turn radio off.\n"
 "2. Connect cable to mic/spkr connector.\n"
@@ -696,7 +701,7 @@ msgid ""
 "5. <b>After clicking OK</b>, press the [BAND] key.\n"
 msgstr ""
 
-#: ../drivers/uvk5.py:621
+#: ../drivers/uvk5.py:702
 msgid ""
 "1. Turn radio on.\n"
 "2. Connect cable to mic/spkr connector.\n"
@@ -706,7 +711,7 @@ msgid ""
 "It will may not work if you turn on the radio with the cable already attached\n"
 msgstr ""
 
-#: ../drivers/uvk5.py:628
+#: ../drivers/uvk5.py:709
 msgid ""
 "1. Turn radio on.\n"
 "2. Connect cable to mic/spkr connector.\n"
@@ -716,7 +721,31 @@ msgid ""
 "It will may not work if you turn on the radio with the cable already attached"
 msgstr ""
 
-#: ../wxui/main.py:2164
+#: ../drivers/uvk5_cn.py:505
+msgid ""
+"1. Turn the radio on.\n"
+"2. Connect the cable to the mic/speaker connector.\n"
+"3. Make sure the connector is firmly seated.\n"
+"4. Click OK to download the image from the device.\n"
+"\n"
+"It may not work if you turn the radio on with the cable already attached."
+msgstr ""
+
+#: ../drivers/uvk5_cn.py:512
+msgid ""
+"1. Turn the radio on.\n"
+"2. Connect the cable to the mic/speaker connector.\n"
+"3. Make sure the connector is firmly seated.\n"
+"4. Click OK to upload the image to the device.\n"
+"\n"
+"It may not work if you turn the radio on with the cable already attached."
+msgstr ""
+
+#: ../settings.py:189
+msgid "A floating point value is required"
+msgstr ""
+
+#: ../wxui/main.py:2269
 msgid "A new CHIRP version is available. Please visit the website as soon as possible to download it!"
 msgstr "Налично е ново издание на CHIRP. За да го изтеглите възможно най-бързо посетете страницата!"
 
@@ -724,19 +753,19 @@ msgstr "Налично е ново издание на CHIRP. За да го и�
 msgid "AM mode does not allow duplex or tone"
 msgstr "Режимът АМ не поддържа дуплекс или тон"
 
-#: ../wxui/main.py:977
+#: ../wxui/main.py:1073
 msgid "About"
 msgstr "Относно"
 
-#: ../wxui/main.py:1924
+#: ../wxui/main.py:2023
 msgid "About CHIRP"
 msgstr "Относно CHIRP"
 
-#: ../wxui/main.py:1979
+#: ../wxui/main.py:2078
 msgid "Agree"
 msgstr "Съгласяване"
 
-#: ../chirp_common.py:1883
+#: ../chirp_common.py:1901
 msgid "Aircraft frequencies must be aligned to 25kHz, 8.33kHz, be or a valid channel"
 msgstr ""
 
@@ -744,15 +773,23 @@ msgstr ""
 msgid "All"
 msgstr "Всички"
 
-#: ../wxui/main.py:1362
+#: ../wxui/main.py:1461
 msgid "All Files"
 msgstr "Всички файлове"
 
-#: ../wxui/main.py:1373
+#: ../wxui/main.py:1472
 msgid "All supported formats"
 msgstr "Всички поддържани формати"
 
-#: ../wxui/clone.py:626
+#: ../drivers/ft450d.py:1646
+msgid "Allows tuning away from a recalled memory or Home channel with the MAIN DIAL, as with a VFO. The stored channel does not change unless you write the new settings to it."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:743
+msgid "Always On keeps it lit all the time."
+msgstr ""
+
+#: ../wxui/clone.py:636
 msgid "Always start with recent list"
 msgstr "Отваряне на списъка при свързване"
 
@@ -764,19 +801,55 @@ msgstr "Любителски"
 msgid "An error has occurred"
 msgstr "Възникна грешка"
 
-#: ../wxui/clone.py:145
+#: ../settings.py:147
+msgid "An integer is required"
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:728
+msgid "Announces the channel number and other operations out loud as you use the radio. It can be intrusive in quiet surroundings."
+msgstr ""
+
+#: ../wxui/clone.py:146
 msgid "Applying settings"
 msgstr "Прилагане на настройки"
 
-#: ../wxui/main.py:1630
+#: ../drivers/ft450d.py:1847
+msgid "Assigns one of the radio's functions to the DWN key of the microphone. DOWN, its normal function, steps the frequency or memory channel down."
+msgstr ""
+
+#: ../drivers/ft450d.py:1855
+msgid "Assigns one of the radio's functions to the FST key of the microphone. FAST, its normal function, speeds up tuning like the front panel FAST button."
+msgstr ""
+
+#: ../drivers/ft450d.py:1863
+msgid "Assigns one of the radio's functions to the UP key of the microphone. UP, its normal function, steps the frequency or memory channel up."
+msgstr ""
+
+#: ../drivers/ft450d.py:1676
+msgid "Assigns one of the radio's functions to the front panel C.S/VOICE button, for example MONI to listen to your own transmission, SWR to transmit a 10 W carrier and measure the antenna SWR, or PLAY1 to send CW beacon message 1. Choices named after a front panel button act like that button."
+msgstr ""
+
+#: ../drivers/ft450d.py:1663
+msgid "Assigns the second function the DSP/SEL knob takes on after it is pressed briefly: adjusting the CW sidetone volume, the CW keyer speed, the microphone gain or the RF power, or tuning in 100 kHz or 1 MHz steps."
+msgstr ""
+
+#: ../wxui/query_sources.py:1136
+msgid "Attempting login..."
+msgstr ""
+
+#: ../wxui/main.py:1729
 msgid "Automatic from system"
 msgstr "Автоматично от системата"
 
-#: ../wxui/developer.py:665
+#: ../drivers/baofeng_uv17Pro.py:748
+msgid "Automatically locks the keypad to prevent accidental changes."
+msgstr ""
+
+#: ../wxui/developer.py:669
 msgid "Available modules"
 msgstr "Достъпни модули"
 
-#: ../wxui/main.py:2088
+#: ../wxui/main.py:2193
 msgid "Bandplan"
 msgstr "Разпределение на честотните ленти"
 
@@ -785,7 +858,7 @@ msgstr "Разпределение на честотните ленти"
 msgid "Bands"
 msgstr "Честотни ленти"
 
-#: ../wxui/main.py:211
+#: ../wxui/main.py:150
 msgid "Banks"
 msgstr "Банки"
 
@@ -793,7 +866,11 @@ msgstr "Банки"
 msgid "Bin"
 msgstr "Bin"
 
-#: ../wxui/main.py:222
+#: ../drivers/baofeng_uv17Pro.py:1089
+msgid "Blocks use of the broadcast FM radio receiver. When it is off, the FM radio can be used as normal."
+msgstr ""
+
+#: ../wxui/main.py:161
 msgid "Browser"
 msgstr "Разглеждане"
 
@@ -818,9 +895,21 @@ msgstr "Доклад относно:"
 msgid "Building Radio Browser"
 msgstr "Попълване на екрана за разглеждане"
 
-#: ../wxui/main.py:1659
+#: ../wxui/main.py:1758
 msgid "CHIRP must be restarted for the new selection to take effect"
 msgstr "За да влязат сила избраното, CHIRP трябва да рестартира"
+
+#: ../drivers/ft450d.py:1511
+msgid "CW beacon message 1, up to 40 characters, sent in CW mode by the PLAY1 function of a programmable button. The radio can send A to Z, 0 to 9, /, space and @."
+msgstr ""
+
+#: ../drivers/ft450d.py:1520
+msgid "CW beacon message 2, up to 40 characters, sent in CW mode by the PLAY2 function of a programmable button. The radio can send A to Z, 0 to 9, /, space and @."
+msgstr ""
+
+#: ../drivers/ft450d.py:1529
+msgid "CW beacon message 3, up to 40 characters, sent in CW mode by the PLAY3 function of a programmable button. The radio can send A to Z, 0 to 9, /, space and @."
+msgstr ""
 
 #: ../wxui/query_sources.py:178
 #, python-format
@@ -835,7 +924,7 @@ msgstr "Канада"
 msgid "Changing this setting requires refreshing the settings from the image, which will happen now."
 msgstr "Промяната на тази настройка изисква презареждане на настройките от образа, което ще се случи сега."
 
-#: ../drivers/retevis_rt97s.py:229
+#: ../drivers/retevis_rt97s.py:213
 msgid "Channel frequencies are from the repeater's point of view. The receive frequency is the 467 MHz input. Duplex is minus and the offset is 5 MHz, so the repeater transmits on the 462 MHz output. A station using this repeater listens on the repeater output and transmits on the input."
 msgstr ""
 
@@ -844,7 +933,7 @@ msgstr ""
 msgid "Channels with equivalent TX and RX %s are represented by tone mode of \"%s\""
 msgstr "Канали с еднакви TX и RX %s са представени с режим на тона „%s“."
 
-#: ../wxui/main.py:1361
+#: ../wxui/main.py:1460
 msgid "Chirp Image Files"
 msgstr "Файлове с образи на Chirp"
 
@@ -866,11 +955,11 @@ msgstr "Изберете тон за %s"
 msgid "Choose Cross Mode"
 msgstr "Изберете режим на прекръстосване"
 
-#: ../wxui/main.py:1198
+#: ../wxui/main.py:1297
 msgid "Choose Diff Target"
 msgstr "Изберете какво ще сравнявате"
 
-#: ../wxui/clone.py:607
+#: ../wxui/clone.py:617
 msgid "Choose a recent model"
 msgstr "Изберете модел последно използваните станции"
 
@@ -878,20 +967,58 @@ msgstr "Изберете модел последно използваните с
 msgid "Choose duplex"
 msgstr "Изберете дуплекс"
 
-#: ../wxui/developer.py:664
+#: ../wxui/developer.py:668
 #, python-format
 msgid "Choose the module to load from issue %i:"
 msgstr "Зареждане на модул от докладван дефект %i:"
+
+#: ../drivers/baofeng_uv17Pro.py:710
+msgid "Chooses the startup display, such as a logo or the battery voltage."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:952
+#, python-format
+msgid "Chooses what a long press of side key %i does."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:951
+#, python-format
+msgid "Chooses what a short press of side key %i does."
+msgstr ""
+
+#: ../drivers/ft450d.py:1594
+msgid "Chooses what the SQL/RF GAIN knob controls. RF-Gain sets the gain of the receiver's RF and IF stages, Squelch mutes the receiver while no signal is present. Scanning needs Squelch, because the scanner stops on signals strong enough to open the squelch."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:858
+msgid "Chooses what the emergency alarm does. Local sounds the alarm on this radio only, Send Tone transmits a repeating alarm tone, and Send Code transmits the digits 119 followed by the ANI code."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:900
+msgid "Chooses where a CTCSS or DCS code found by scanning in Frequency (VFO) mode is saved: Both saves it as the receive and transmit code, RX only as the receive code, and TX only as the transmit code."
+msgstr ""
+
+#: ../drivers/ft450d.py:987
+msgid "Chooses whether the contour filter boosts (Peak) or cuts (Null) the part of the passband it is set to."
+msgstr ""
+
+#: ../drivers/ft450d.py:1617
+msgid "Chooses which knob sets the clarifier offset after CLAR is pressed: the MAIN DIAL or the DSP/SEL knob. The clarifier shifts the receive frequency without changing the transmit frequency."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:830
+msgid "Chooses which transmitted DTMF tones are also heard through the radio speaker. Off mutes all; KB Side Tone sounds manually keyed tones; ANI Side Tone sounds automatic ANI/PTT-ID tones; KB + ANI Side Tone sounds both."
+msgstr ""
 
 #: ../wxui/query_sources.py:563
 msgid "City"
 msgstr "Град"
 
-#: ../wxui/main.py:1965
+#: ../wxui/main.py:2064
 msgid "Click here for full license text"
 msgstr "Прочетете тук целия текст на лиценза"
 
-#: ../wxui/main.py:1944
+#: ../wxui/main.py:2043
 msgid "Click here for online documentation"
 msgstr ""
 
@@ -909,21 +1036,21 @@ msgstr ""
 msgid "Clone completed, checking for spurious bytes"
 msgstr "Записването завърши, проверка за паразитни байтове"
 
-#: ../wxui/common.py:145
+#: ../wxui/common.py:124 ../wxui/common.py:145
 msgid "Cloning"
 msgstr "Записване"
 
-#: ../drivers/ft450d.py:511 ../drivers/bj9900.py:133 ../drivers/ft4.py:327
+#: ../drivers/bj9900.py:133 ../drivers/ft450d.py:517 ../drivers/ft4.py:327
 #: ../drivers/ft817.py:343
 msgid "Cloning from radio"
 msgstr "Зареждане от станция…"
 
-#: ../drivers/ft450d.py:540 ../drivers/bj9900.py:165 ../drivers/ft4.py:328
+#: ../drivers/bj9900.py:165 ../drivers/ft450d.py:546 ../drivers/ft4.py:328
 #: ../drivers/ft817.py:381
 msgid "Cloning to radio"
 msgstr "Записване в станция…"
 
-#: ../wxui/main.py:1075 ../wxui/main.py:1980
+#: ../wxui/main.py:1171 ../wxui/main.py:2079
 msgid "Close"
 msgstr "Затваряне"
 
@@ -931,7 +1058,7 @@ msgstr "Затваряне"
 msgid "Close String"
 msgstr "Завършване на низ"
 
-#: ../wxui/main.py:1076
+#: ../wxui/main.py:1172
 msgid "Close file"
 msgstr "Затваряне на файла"
 
@@ -950,11 +1077,11 @@ msgstr[1] "Групиране на %i записа"
 msgid "Comment"
 msgstr "Коментар"
 
-#: ../wxui/clone.py:319
+#: ../wxui/clone.py:329
 msgid "Communicate with radio"
 msgstr "Осъществяване на връзка със станция"
 
-#: ../wxui/clone.py:153
+#: ../wxui/clone.py:154 ../sources/repeaterbook.py:150
 msgid "Complete"
 msgstr "Завършено"
 
@@ -969,6 +1096,22 @@ msgid ""
 msgstr ""
 "Свършете кабела към „PC Port“ на гърба на „TX/RX“\n"
 "модула, а НЕ към „Com Port“ на предния панел.\n"
+
+#: ../drivers/baofeng_uv17Pro.py:848
+msgid "Controls what scanning does after finding a signal. Time resumes after a preset time, Carrier resumes after the signal disappears, and Search stops scanning on the detected frequency or channel."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:642
+msgid "Controls when the ANI code is sent: BOT when PTT is pressed, EOT when PTT is released, Both at both times, or Off."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1576
+msgid "Controls when this channel sends the selected DTMF PTT-ID: BOT when PTT is pressed, EOT when PTT is released, Both at both times, or Off."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1024
+msgid "Controls whether the radio's front-panel RESET menu is available. This does not reset the radio by itself."
+msgstr ""
 
 #: ../wxui/query_sources.py:407
 msgid "Convert to FM"
@@ -987,11 +1130,20 @@ msgstr "Преносимо копиране"
 msgid "Country"
 msgstr "Държава"
 
+#: ../wxui/query_sources.py:1098
+msgid "County"
+msgstr ""
+
 #: ../wxui/memedit.py:689
 msgid "Cross Mode"
 msgstr "Режим на прекръстосване"
 
-#: ../wxui/clone.py:568
+#: ../chirp_common.py:1140
+#, python-format
+msgid "Cross tone mode %s not supported"
+msgstr ""
+
+#: ../wxui/clone.py:578
 msgid "Custom Port"
 msgstr "Порт по избор"
 
@@ -1008,6 +1160,10 @@ msgstr "Изрязване"
 msgid "Cut %i memories"
 msgstr "Изрязване %i записа"
 
+#: ../drivers/baofeng_uv17Pro.py:800
+msgid "Cuts standby power consumption by switching the receiver off and on in a repeating cycle once no signal has been received for a few seconds. It considerably extends battery life, at the cost of occasionally clipping the first moment of an incoming transmission."
+msgstr ""
+
 #: ../wxui/memedit.py:620
 msgid "DTCS"
 msgstr "DTCS"
@@ -1018,21 +1174,51 @@ msgid ""
 "Polarity"
 msgstr "Полярност на DTCS"
 
-#: ../drivers/uvk5.py:845
+#: ../chirp_common.py:1160 ../chirp_common.py:1165
+#, python-format
+msgid "DTCS Code %03i not supported"
+msgstr ""
+
+#: ../chirp_common.py:1154
+#, python-format
+msgid "DTCS Polarity %s not supported"
+msgstr ""
+
+#: ../chirp_common.py:582
+msgid "DTCS Rx code is not a valid number"
+msgstr ""
+
+#: ../chirp_common.py:585
+msgid "DTCS Rx code is not valid"
+msgstr ""
+
+#: ../chirp_common.py:568
+msgid "DTCS code is not a valid number"
+msgstr ""
+
+#: ../chirp_common.py:570
+msgid "DTCS code is not valid"
+msgstr ""
+
+#: ../drivers/uvk5.py:926
 msgid "DTMF decode"
 msgstr "Декодиране на DTMF"
 
-#: ../wxui/memedit.py:2945
+#: ../wxui/memedit.py:2856 ../wxui/memedit.py:2946
 msgid "DV Memory"
 msgstr "Записи за цифрови разговори"
 
-#: ../wxui/main.py:2001
+#: ../wxui/main.py:2102
 msgid "Danger Ahead"
 msgstr "Напред е опасно"
 
 #: ../wxui/developer.py:281
 msgid "Dec"
 msgstr "Dec"
+
+#: ../drivers/baofeng_uv17Pro.py:891
+msgid "Delays transmission of the automatic ANI/PTT-ID code after PTT is pressed, allowing the receiving path time to open before the code is sent."
+msgstr ""
 
 #: ../wxui/memedit.py:2232
 msgid "Delete"
@@ -1042,15 +1228,29 @@ msgstr "Премахване"
 msgid "Delete memories"
 msgstr "Премахване на записи"
 
+#: ../import_logic.py:209
+#, python-format
+msgid "Destination does not support %s"
+msgstr ""
+
+#: ../import_logic.py:150 ../import_logic.py:154
+#, python-format
+msgid "Destination does not support tone frequency %s"
+msgstr ""
+
+#: ../import_logic.py:261
+msgid "Destination radio does not support D-STAR"
+msgstr ""
+
 #: ../wxui/bugreport.py:570
 msgid "Detailed information"
 msgstr "Подробна информация"
 
-#: ../wxui/main.py:982
+#: ../wxui/main.py:1078
 msgid "Developer Mode"
 msgstr "Режим за разработчик"
 
-#: ../wxui/main.py:2007
+#: ../wxui/main.py:2111
 #, python-format
 msgid "Developer state is now %s. CHIRP must be restarted to take effect"
 msgstr "Режимът на разработчик е %s. Приложението трябва да бъде рестартирано"
@@ -1063,7 +1263,7 @@ msgstr "Разлики в необработеното съдържание на
 msgid "Diff against another editor"
 msgstr "Сравняване с друг редактор"
 
-#: ../wxui/memedit.py:2862
+#: ../wxui/memedit.py:2863
 msgid "Digital Code"
 msgstr "Цифров код"
 
@@ -1071,7 +1271,7 @@ msgstr "Цифров код"
 msgid "Digital Modes"
 msgstr "Цифрови режими"
 
-#: ../wxui/main.py:2019
+#: ../wxui/main.py:2124
 msgid "Disable reporting"
 msgstr "Изключване на докладването"
 
@@ -1079,7 +1279,7 @@ msgstr "Изключване на докладването"
 msgid "Disabled"
 msgstr "Изключено"
 
-#: ../drivers/retevis_rt97s.py:337
+#: ../drivers/retevis_rt97s.py:309
 msgid "Disabling Transit Function disables repeating. The repeater will not repeat until this setting is enabled."
 msgstr ""
 
@@ -1088,46 +1288,82 @@ msgstr ""
 msgid "Distance"
 msgstr "Разстояние"
 
-#: ../wxui/clone.py:207
+#: ../drivers/ft450d.py:1312
+msgid "Divides the 500 regular memory channels into ten groups of 50, numbered M-01-01 to M-10-50. Channels are then selected and scanned one group at a time."
+msgstr ""
+
+#: ../wxui/clone.py:217
 #, python-format
 msgid "Do not prompt again for %s"
 msgstr "Без повторно питане за %s"
 
-#: ../wxui/clone.py:204
+#: ../wxui/clone.py:214
 msgid "Do you accept the risk?"
 msgstr "Приемате ли риска?"
 
-#: ../wxui/bankedit.py:190
+#: ../sources/amsats.py:136 ../sources/amsats.py:280
+msgid "Done"
+msgstr ""
+
+#: ../wxui/bankedit.py:199
 msgid "Double-click to change bank name"
 msgstr "Името на банката може да бъде променено след двойно щракване"
 
-#: ../wxui/main.py:1077
+#: ../wxui/main.py:1173
 msgid "Download"
 msgstr "Изтегляне"
 
-#: ../wxui/main.py:1078
+#: ../sources/repeaterbook.py:207
+msgid "Download complete"
+msgstr ""
+
+#: ../wxui/main.py:1174
 msgid "Download from radio"
 msgstr "Изтегляне от станция"
 
-#: ../wxui/main.py:868
+#: ../wxui/main.py:964
 msgid "Download from radio..."
 msgstr "Изтегляне от станция…"
 
-#: ../wxui/clone.py:791
+#: ../wxui/clone.py:801
 msgid "Download instructions"
 msgstr "Инструкции за изтегляне"
 
-#: ../wxui/radioinfo.py:66
+#: ../sources/repeaterbook.py:173
+msgid "Downloading"
+msgstr ""
+
+#: ../sources/amsats.py:240
+msgid "Downloading SatNOGS satellites..."
+msgstr ""
+
+#: ../sources/amsats.py:243
+msgid "Downloading SatNOGS transmitters..."
+msgstr ""
+
+#: ../sources/amsats.py:106
+msgid "Downloading satellite data..."
+msgstr ""
+
+#: ../wxui/radioinfo.py:76
 msgid "Driver"
 msgstr "Управляващ софтуер"
 
-#: ../drivers/uvk5.py:1263
+#: ../drivers/uvk5_cn.py:703 ../drivers/uvk5.py:1343
 msgid "Driver information"
 msgstr "Сведения за управляващия софтуер"
 
-#: ../wxui/main.py:574
+#: ../wxui/main.py:649
 msgid "Driver messages"
 msgstr "Съобщения от управляващия софтуер"
+
+#: ../wxui/main.py:438
+msgid "Drop tab to move it here"
+msgstr ""
+
+#: ../chirp_common.py:576
+msgid "DtcsPolarity is not valid"
+msgstr ""
 
 #: ../wxui/query_sources.py:409
 msgid "Dual-mode digital repeaters that support analog will be shown as FM"
@@ -1137,28 +1373,53 @@ msgstr "Цифровите ретранслатори, поддържащи и �
 msgid "Duplex"
 msgstr "Дуплекс"
 
+#: ../chirp_common.py:1170
+#, python-format
+msgid "Duplex %s not supported"
+msgstr ""
+
+#: ../chirp_common.py:535
+msgid "Duplex is not +,-, or empty"
+msgstr ""
+
+#: ../drivers/uvk5_cn.py:719
+msgid "EEPROM size"
+msgstr ""
+
 #: ../wxui/memedit.py:2373
 #, python-format
 msgid "Edit %i memories"
 msgstr ""
 
-#: ../wxui/memedit.py:2892
+#: ../wxui/memedit.py:2893
 #, python-format
 msgid "Edit details for %i memories"
 msgstr "Промяна стойностите на %i записа"
 
-#: ../wxui/memedit.py:2890
+#: ../wxui/memedit.py:2891
 #, python-format
 msgid "Edit details for memory %i"
 msgstr "Промяна на запис № %i"
 
-#: ../wxui/main.py:926
+#: ../wxui/main.py:1022
 msgid "Enable Automatic Edits"
 msgstr "Автоматични промени"
 
 #: ../wxui/memedit.py:596
 msgid "Enabled"
 msgstr "Включено"
+
+#: ../drivers/baofeng_uv17Pro.py:866
+msgid "Enables or disables the alarm sound."
+msgstr ""
+
+#: ../drivers/ft450d.py:1284
+msgid "Enables the RTS line of the CAT jack. Turn it off when the computer or cable does not provide RTS. A radio that follows the frequency of another radio set to F-TRANS also needs it off."
+msgstr ""
+
+#: ../drivers/ft450d.py:1353
+msgid "Enables transmit and receive on the Alaska emergency channel, 5167.5 kHz, which then appears as MEM-EMG in Memory mode. It may only be used by stations in or within 92.6 km of Alaska, and only for emergency communications involving the immediate protection of life or property."
+msgstr ""
 
 #: ../wxui/memedit.py:404
 msgid "Enter Frequency"
@@ -1172,12 +1433,12 @@ msgstr "Въведете отместване (МХц)"
 msgid "Enter TX Frequency (MHz)"
 msgstr "Въведете честота на предаване (МХц)"
 
-#: ../wxui/bankedit.py:203
+#: ../wxui/bankedit.py:212
 #, python-format
 msgid "Enter a new name for bank %s:"
 msgstr "Въведете ново име за банка %s:"
 
-#: ../wxui/clone.py:567
+#: ../wxui/clone.py:577
 msgid "Enter custom port:"
 msgstr "Въведете порт по избор:"
 
@@ -1214,7 +1475,7 @@ msgstr "Грешка при прилагане на филтър"
 msgid "Error applying settings"
 msgstr "Грешка при прилагане на настройките"
 
-#: ../wxui/clone.py:696
+#: ../wxui/clone.py:706
 msgid "Error communicating with radio"
 msgstr "Грешка при връзката със станцията"
 
@@ -1254,27 +1515,32 @@ msgstr "Пример: name~\"ретрансл\""
 msgid "Exclude private and closed repeaters"
 msgstr "Изключване на частните и затворени ретранслатори"
 
-#: ../wxui/clone.py:750
+#: ../wxui/memquery.py:232
+#, python-format
+msgid "Expected: %s"
+msgstr ""
+
+#: ../wxui/clone.py:760
 msgid "Experimental driver"
 msgstr "Изпитателен управляващ софтуер"
 
-#: ../wxui/memedit.py:2805
+#: ../wxui/memedit.py:2806
 msgid "Export can only write CSV files"
 msgstr "При изнасяне могат да бъдат запазвани само файлове на CSV"
 
-#: ../wxui/main.py:1518
+#: ../wxui/main.py:1617
 msgid "Export to CSV"
 msgstr "Изнасяне в CSV"
 
-#: ../wxui/main.py:740
+#: ../wxui/main.py:836
 msgid "Export to CSV..."
 msgstr "Изнасяне в CSV…"
 
-#: ../wxui/memedit.py:2934
+#: ../wxui/memedit.py:2935
 msgid "Extra"
 msgstr "Допълнителни"
 
-#: ../drivers/uvk5.py:1261
+#: ../drivers/uvk5.py:1341
 msgid "FM Radio"
 msgstr "Радио ЧМ"
 
@@ -1295,7 +1561,12 @@ msgstr ""
 "Безплатен списък с най-новата информация за\n"
 "европейските ретранслатори. Не е необходим профил."
 
-#: ../wxui/memedit.py:2843
+#: ../sources/amsats.py:114
+#, python-format
+msgid "Failed to download data: %s"
+msgstr ""
+
+#: ../wxui/memedit.py:2844
 msgid "Failed to export some memories"
 msgstr ""
 
@@ -1303,8 +1574,8 @@ msgstr ""
 msgid "Failed to load radio browser"
 msgstr "Грешка при попълване на екрана за разглеждане"
 
-#: ../sources/mapy73pl.py:61 ../sources/przemienniki_eu.py:57
-#: ../sources/przemienniki_net.py:59
+#: ../sources/przemienniki_eu.py:57 ../sources/przemienniki_net.py:59
+#: ../sources/mapy73pl.py:61
 msgid "Failed to parse result"
 msgstr "Грешка при разбора на резултата"
 
@@ -1312,21 +1583,45 @@ msgstr "Грешка при разбора на резултата"
 msgid "Failed to send bug report:"
 msgstr "Грешка при изпращане на доклад за дефект:"
 
-#: ../wxui/radioinfo.py:47
+#: ../sources/repeaterbook.py:192
+msgid "Failed to write RepeaterBook data to disk"
+msgstr ""
+
+#: ../wxui/query_sources.py:204 ../wxui/query_sources.py:1131
+#, python-format
+msgid "Failed: %s"
+msgstr ""
+
+#: ../wxui/radioinfo.py:57
 msgid "Features"
 msgstr "Настройки"
+
+#: ../sources/amsats.py:217
+#, python-format
+msgid "Fetching %s (page %i)..."
+msgstr ""
+
+#: ../sources/radioreference.py:153
+#, python-format
+msgid "Fetching %s:%s"
+msgstr ""
+
+#: ../sources/radioreference.py:176
+#, python-format
+msgid "Fetching agency %s %s:%s"
+msgstr ""
 
 #: ../wxui/bugreport.py:213
 msgid "File a new bug"
 msgstr "Докладване на дефект"
 
-#: ../wxui/main.py:581
+#: ../wxui/main.py:656
 #, python-format
 msgid "File does not exist: %s"
 msgstr "Файлът „%s“ не съществува"
 
-#: ../wxui/main.py:1365 ../wxui/main.py:1445 ../wxui/main.py:1455
-#: ../wxui/main.py:1514 ../wxui/main.py:1894 ../wxui/main.py:1895
+#: ../wxui/main.py:1464 ../wxui/main.py:1544 ../wxui/main.py:1554
+#: ../wxui/main.py:1613 ../wxui/main.py:1993 ../wxui/main.py:1994
 msgid "Files"
 msgstr "файлове"
 
@@ -1346,15 +1641,15 @@ msgstr "Филтриране на резултатите, чието место�
 msgid "Filter..."
 msgstr "Филтър…"
 
-#: ../wxui/main.py:1588
+#: ../wxui/main.py:1687
 msgid "Find"
 msgstr "Търсене"
 
-#: ../wxui/main.py:808
+#: ../wxui/main.py:904
 msgid "Find Next"
 msgstr "Следващо съвпадение"
 
-#: ../wxui/main.py:794
+#: ../wxui/main.py:890
 msgid "Find..."
 msgstr "Търсене…"
 
@@ -1370,6 +1665,10 @@ msgstr "Довършете стойността с плаваща запетая
 #, python-format
 msgid "Finished radio job %s"
 msgstr "Със станцията е завършено е действието „%s“"
+
+#: ../drivers/uvk5_cn.py:712
+msgid "Firmware version"
+msgstr ""
 
 #: ../drivers/ts590.py:685
 msgid ""
@@ -1398,7 +1697,7 @@ msgid ""
 "4 - CHIRP Menu - Radio - Download from radio\n"
 msgstr ""
 
-#: ../drivers/ic2730.py:306
+#: ../drivers/ic2730.py:311
 msgid ""
 "Follow these instructions to download your config:\n"
 "1 - Turn off your radio\n"
@@ -1409,11 +1708,11 @@ msgid ""
 "    no right-side audio!\n"
 msgstr ""
 
-#: ../drivers/baofeng_wp970i.py:327 ../drivers/baofeng_uv17Pro.py:514
-#: ../drivers/uv6r.py:339 ../drivers/mursv1.py:341 ../drivers/uv5x3.py:417
-#: ../drivers/btech.py:636 ../drivers/gmrsv2.py:363
-#: ../drivers/tdxone_tdq8a.py:444 ../drivers/bf_t1.py:484
-#: ../drivers/gmrsuv1.py:391
+#: ../drivers/mursv1.py:341 ../drivers/baofeng_wp970i.py:327
+#: ../drivers/btech.py:636 ../drivers/gmrsuv1.py:395
+#: ../drivers/tdxone_tdq8a.py:444 ../drivers/uv6r.py:343
+#: ../drivers/uv5x3.py:421 ../drivers/gmrsv2.py:363
+#: ../drivers/baofeng_uv17Pro.py:514 ../drivers/bf_t1.py:484
 msgid ""
 "Follow these instructions to download your info:\n"
 "1 - Turn off your radio\n"
@@ -1472,7 +1771,7 @@ msgid ""
 "4 - CHIRP Menu - Radio - Upload to radio\n"
 msgstr ""
 
-#: ../drivers/ic2730.py:314
+#: ../drivers/ic2730.py:319
 msgid ""
 "Follow these instructions to upload your config:\n"
 "1 - Turn off your radio\n"
@@ -1544,11 +1843,11 @@ msgid ""
 "4 - Do the download of your radio data\n"
 msgstr ""
 
-#: ../drivers/vgc.py:592 ../drivers/baofeng_wp970i.py:333
-#: ../drivers/lt725uv.py:492 ../drivers/baofeng_uv17Pro.py:520
-#: ../drivers/uv6r.py:345 ../drivers/mursv1.py:347 ../drivers/uv5x3.py:423
-#: ../drivers/gmrsv2.py:369 ../drivers/tdxone_tdq8a.py:450
-#: ../drivers/gmrsuv1.py:397
+#: ../drivers/vgc.py:592 ../drivers/mursv1.py:347
+#: ../drivers/baofeng_wp970i.py:333 ../drivers/gmrsuv1.py:401
+#: ../drivers/lt725uv.py:492 ../drivers/tdxone_tdq8a.py:450
+#: ../drivers/uv6r.py:349 ../drivers/uv5x3.py:427 ../drivers/gmrsv2.py:369
+#: ../drivers/baofeng_uv17Pro.py:520
 msgid ""
 "Follow this instructions to upload your info:\n"
 "1 - Turn off your radio\n"
@@ -1584,9 +1883,9 @@ msgstr ""
 msgid "Frequency granularity in kHz"
 msgstr "Стъпка на честотата в кХз"
 
-#: ../drivers/retevis_ha1g.py:1439 ../drivers/ga510.py:1094
-#: ../drivers/uv5r.py:2249 ../drivers/tdh8.py:2540
-#: ../drivers/baofeng_uv17Pro.py:1297 ../drivers/mml_jc8810.py:1383
+#: ../drivers/ga510.py:1094 ../drivers/mml_jc8810.py:1383
+#: ../drivers/tdh8.py:2540 ../drivers/retevis_ha1g.py:1439
+#: ../drivers/uv5r.py:2249 ../drivers/baofeng_uv17Pro.py:1478
 msgid "Frequency in this range must not be AM mode"
 msgstr "Честотата в този обхват не трябва да бъде в режим на АМ"
 
@@ -1594,16 +1893,25 @@ msgstr "Честотата в този обхват не трябва да бъ�
 msgid "Frequency in this range not supported by firmware"
 msgstr ""
 
-#: ../drivers/retevis_ha1g.py:1435 ../drivers/ga510.py:1087
-#: ../drivers/uv5r.py:2245 ../drivers/tdh8.py:2537
-#: ../drivers/baofeng_uv17Pro.py:1294 ../drivers/mml_jc8810.py:1380
-#: ../drivers/radtel_rt900.py:1623
+#: ../drivers/ga510.py:1087 ../drivers/radtel_rt900.py:1623
+#: ../drivers/mml_jc8810.py:1380 ../drivers/tdh8.py:2537
+#: ../drivers/retevis_ha1g.py:1435 ../drivers/uv5r.py:2245
+#: ../drivers/baofeng_uv17Pro.py:1475
 msgid "Frequency in this range requires AM mode"
 msgstr "Честотата в този обхват изисква режим на АМ"
+
+#: ../chirp_common.py:529
+msgid "Frequency is not a valid number"
+msgstr ""
 
 #: ../drivers/tdh8.py:2544
 msgid "Frequency outside TX bands must be duplex=off"
 msgstr "Честотата извън обхватите на предаване трябва да бъде 'duplex=off'"
+
+#: ../chirp_common.py:1187
+#, python-brace-format
+msgid "Frequency {freq} is out of supported ranges {ranges}"
+msgstr ""
 
 #: ../wxui/query_sources.py:355 ../wxui/query_sources.py:435
 #: ../wxui/query_sources.py:536
@@ -1613,6 +1921,11 @@ msgstr "GMRS"
 #: ../wxui/settingsedit.py:86
 msgid "Getting settings"
 msgstr "Получаване на настройки"
+
+#: ../sources/repeaterbook.py:158
+#, python-format
+msgid "Got error code %i (%s) from server"
+msgstr ""
 
 #: ../wxui/memedit.py:1408
 msgid "Goto Memory"
@@ -1631,7 +1944,12 @@ msgstr "Към…"
 msgid "Group: %s"
 msgstr ""
 
-#: ../wxui/main.py:1043
+#: ../drivers/generic_csv.py:232
+#, python-format
+msgid "Header line has unknown field %r"
+msgstr ""
+
+#: ../wxui/main.py:1139
 msgid "Help"
 msgstr "Помощ"
 
@@ -1647,8 +1965,20 @@ msgstr "Hex"
 msgid "Hide empty memories"
 msgstr "Скриване на празни зиписи"
 
+#: ../drivers/baofeng_uv17Pro.py:874
+msgid "Hold the * key on the radio to lock or unlock the keypad."
+msgstr ""
+
+#: ../drivers/ft450d.py:1654
+msgid "Holds the peak S-meter reading for one second, which makes the meter easier to read."
+msgstr ""
+
 #: ../drivers/retevis_rt98.py:998
 msgid "Honor the CTCSS/DCS receive squelch configuration when enabled, else only carrier squelch"
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1057
+msgid "How long the transmitter stays keyed after you stop speaking. A longer delay avoids dropping the transmission during natural pauses in speech."
 msgstr ""
 
 #: ../wxui/memedit.py:165
@@ -1665,7 +1995,23 @@ msgstr ""
 msgid "If set, sort results by distance from these coordinates"
 msgstr "Ако е зададено, сортира резултатите по отдалеченост от тези координати"
 
-#: ../wxui/main.py:1500
+#: ../wxui/radioinfo.py:131
+msgid "Image Metadata"
+msgstr ""
+
+#: ../drivers/uvk5_cn.py:592
+#, python-format
+msgid ""
+"Image is %(image)i bytes from firmware %(image_fw)r (profile %(image_profile)s). The radio reports firmware %(radio_fw)r (profile %(radio_profile)s), which suggests %(default)i bytes, and the EEPROM size setting is %(size)i bytes.\n"
+"Load an image of the right size, or set the EEPROM size to the real size."
+msgstr ""
+
+#: ../drivers/uvk5_cn.py:584
+#, python-format
+msgid "Image is %(image)i bytes, but this driver only writes below 0x%(limit)x; 0x%(limit)x and above is the multi-bootloader on these firmwares and writing there can destroy the radio. Use an image that stops before it."
+msgstr ""
+
+#: ../wxui/main.py:1599
 msgid "Import"
 msgstr "Внасяне"
 
@@ -1674,27 +2020,45 @@ msgstr "Внасяне"
 msgid "Import %i memories"
 msgstr ""
 
-#: ../wxui/main.py:734
+#: ../wxui/main.py:830
 msgid "Import from file..."
 msgstr "Внасяне от файл…"
 
-#: ../wxui/main.py:1504
+#: ../wxui/main.py:1603
 msgid "Import messages"
 msgstr "Съобщения при внасяне"
 
-#: ../wxui/main.py:1498
+#: ../wxui/main.py:1597
 msgid "Import not recommended"
 msgstr "Не се препоръчва внасяне"
+
+#: ../drivers/baofeng_uv17Pro.py:777
+msgid "In channel mode, chooses whether display line A shows the memory channel number, its programmed name, or its frequency."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:786
+msgid "In channel mode, chooses whether display line B shows the memory channel number, its programmed name, or its frequency."
+msgstr ""
 
 #: ../wxui/query_sources.py:424
 msgid "Include Cached"
 msgstr ""
 
-#: ../wxui/bankedit.py:62
+#: ../drivers/ft450d.py:1871
+#, python-format
+msgid "Includes %s in the modes the MODE buttons step through. Turn off the modes you never use to reach the others with fewer presses."
+msgstr ""
+
+#: ../drivers/ft450d.py:1914
+#, python-format
+msgid "Includes the %s band in the bands the BAND buttons step through. Turn off the bands you never use to reach the others with fewer presses."
+msgstr ""
+
+#: ../wxui/bankedit.py:64
 msgid "Index"
 msgstr "Пореден номер"
 
-#: ../wxui/main.py:224
+#: ../wxui/main.py:163
 msgid "Info"
 msgstr "Сведения"
 
@@ -1706,20 +2070,37 @@ msgstr "Сведения"
 msgid "Insert Row Above"
 msgstr "Вмъкване на ред отгоре"
 
+#: ../wxui/memedit.py:2380
+msgid "Insert row"
+msgstr ""
+
 #: ../wxui/__init__.py:60
 msgid "Install desktop icon?"
 msgstr "Добавяне на пикограма към работния плот?"
 
-#: ../wxui/main.py:966
+#: ../wxui/main.py:1062
 msgid "Interact with driver"
 msgstr "Взаимодействие с управляващия софтуер"
 
-#: ../wxui/clone.py:813
+#: ../drivers/ft450d.py:959
+msgid "Intercept point optimization. Bypasses the receiver's RF preamplifier so that the incoming signal goes straight to the first mixer. This gives up some sensitivity in exchange for better handling of strong signals and high noise levels."
+msgstr ""
+
+#: ../wxui/clone.py:823
 msgid "Internal driver error"
 msgstr "Вътрешна грешка на управляващия софтуер"
 
-#: ../chirp_common.py:674
+#: ../chirp_common.py:685
 msgid "Internal driver error: Attempt to modify frozen memory; Please report this as a bug using \"Report or update a bug\" in the Help menu"
+msgstr ""
+
+#: ../sources/repeaterbook.py:105
+msgid "Internal error - check log"
+msgstr ""
+
+#: ../wxui/memedit.py:312
+#, python-format
+msgid "Internal error: unable to prompt for %s"
 msgstr ""
 
 #: ../wxui/query_sources.py:62
@@ -1728,7 +2109,7 @@ msgid "Invalid %(value)s (use decimal degrees)"
 msgstr "Неприемлива стойност „%(value)s“ (използвайте десетични градуси)"
 
 #: ../wxui/query_sources.py:70 ../wxui/query_sources.py:124
-#: ../wxui/memedit.py:2049
+#: ../wxui/query_sources.py:151 ../wxui/memedit.py:2049 ../wxui/memedit.py:3029
 msgid "Invalid Entry"
 msgstr "Недействителен запис"
 
@@ -1736,38 +2117,47 @@ msgstr "Недействителен запис"
 msgid "Invalid ZIP code"
 msgstr "Неприемлив пощенски код"
 
-#: ../wxui/memedit.py:2048 ../wxui/memedit.py:3027
+#: ../wxui/memedit.py:2048 ../wxui/memedit.py:3028
 #, python-format
 msgid "Invalid edit: %s"
 msgstr "Неприемлива промяна: %s"
+
+#: ../wxui/memedit.py:413
+msgid "Invalid frequency"
+msgstr ""
 
 #: ../wxui/query_sources.py:124
 msgid "Invalid locator"
 msgstr ""
 
-#: ../wxui/main.py:1891
+#: ../wxui/main.py:1990
 msgid "Invalid or unsupported module file"
 msgstr "Недействителен или неподдържан файл на модул"
+
+#: ../chirp_common.py:546
+#, python-format
+msgid "Invalid tone mode `%s'"
+msgstr ""
 
 #: ../wxui/memedit.py:296 ../wxui/memedit.py:302
 #, python-format
 msgid "Invalid value: %r"
 msgstr "Недействителна стойност: %r"
 
-#: ../wxui/developer.py:631
+#: ../wxui/developer.py:635
 #, python-format
 msgid "Issue %i is not in a valid state to load modules. It is highly recommended that you not attempt to manually load modules from this issue as it is likely to cause problems."
 msgstr ""
 
-#: ../wxui/developer.py:686
+#: ../wxui/developer.py:690
 msgid "Issue number:"
 msgstr "Номер на дефект:"
 
-#: ../wxui/main.py:353
+#: ../wxui/main.py:292
 msgid "LIVE"
 msgstr "НА ЖИВО"
 
-#: ../wxui/main.py:854 ../wxui/main.py:1644 ../drivers/radtel_rt490.py:1028
+#: ../drivers/radtel_rt490.py:1024 ../wxui/main.py:950 ../wxui/main.py:1743
 msgid "Language"
 msgstr "Език"
 
@@ -1780,6 +2170,14 @@ msgstr "Географска ширина"
 #, python-format
 msgid "Length must be %i"
 msgstr "Дължината трябва да бъде %i"
+
+#: ../drivers/ft450d.py:1482
+msgid "Lets the KEY jack send CW while the radio is in SSB mode, so you can answer a station in CW without changing mode. When off, the KEY jack only works in CW mode."
+msgstr ""
+
+#: ../drivers/ft450d.py:1541
+msgid "Lets the MAIN DIAL knob change the frequency in AM and FM modes. When off, the MAIN DIAL does not tune in these modes."
+msgstr ""
 
 #: ../wxui/query_sources.py:395 ../wxui/query_sources.py:634
 #: ../wxui/query_sources.py:787
@@ -1807,47 +2205,91 @@ msgstr "Ограничаване на резултатите до това ра�
 msgid "Limit use"
 msgstr "Ограничаване на използването"
 
-#: ../wxui/main.py:1746
+#: ../drivers/uvk5_cn.py:737
+msgid "Limits disabled for modified firmware"
+msgstr ""
+
+#: ../drivers/ft450d.py:1274 ../drivers/baofeng_uv17Pro.py:682
+msgid "Limits how long a single transmission may last. When the time runs out the radio stops transmitting until PTT is released, which prevents overheating and stops a stuck PTT from blocking the channel for everyone else."
+msgstr ""
+
+#: ../drivers/generic_csv.py:240
+#, python-format
+msgid "Line %i has %i columns, expected %i"
+msgstr ""
+
+#: ../drivers/generic_csv.py:255
+#, python-format
+msgid "Line %i: %s"
+msgstr ""
+
+#: ../wxui/main.py:1845
 msgid "Live Radio"
 msgstr "Радио на живо"
 
-#: ../wxui/main.py:746
+#: ../wxui/main.py:842
 msgid "Load Module..."
 msgstr "Зареждане на модул…"
 
-#: ../wxui/developer.py:687
+#: ../wxui/developer.py:691
 msgid "Load module from issue"
 msgstr "Зареждане на модул от докладван дефект"
 
-#: ../wxui/main.py:1019
+#: ../wxui/main.py:1115
 msgid "Load module from issue..."
 msgstr "Зареждане на модул от докладван дефект…"
 
-#: ../wxui/main.py:2055
+#: ../wxui/main.py:2160
 msgid "Loading a module will not affect open tabs. It is recommended (unless instructed otherwise) to close all tabs before loading a module."
 msgstr "Зареждането на модул няма да повлияе на отворените раздели. Препоръчва се (освен ако не е указано друго) да затворите всички раздели, преди да зареждате модули."
 
-#: ../wxui/main.py:1898
+#: ../wxui/main.py:1997
 msgid "Loading modules can be extremely dangerous, leading to damage to your computer, radio, or both. NEVER load a module from a source you do not trust, and especially not from anywhere other than the main CHIRP website (chirpmyradio.com). Loading a module from another source is akin to giving them direct access to your computer and everything on it! Proceed despite this risk?"
 msgstr "Зареждането на модул може да бъде изключително опасно и да доведе до повреда на компютърa, радиостанцията или и двете. НИКОГА не зареждайте модули от източници, на който нямате доверие и особено от място, различно от основната страница на CHIRP (chirpmyradio.com). Зареждането на модули от други източници е равносилно на това да им дадете пълен достъп до компютъра и всичко в него! Желаете ли да продължите, въпреки риска?"
 
-#: ../wxui/clone.py:147
+#: ../wxui/clone.py:148
 msgid "Loading settings"
 msgstr "Зареждане на настройки"
 
+#: ../chirp_common.py:1121
+#, python-format
+msgid "Location %i is out of range"
+msgstr ""
+
+#: ../chirp_common.py:521
+#, python-format
+msgid "Location '%s' is not a valid integer"
+msgstr ""
+
 #: ../wxui/query_sources.py:110
 msgid "Locator"
+msgstr ""
+
+#: ../drivers/ft450d.py:1729
+msgid "Locks the controls selected by Lock Mode against accidental changes, as the LOCK button does."
+msgstr ""
+
+#: ../wxui/query_sources.py:1086
+msgid "Log In"
+msgstr ""
+
+#: ../wxui/query_sources.py:1091 ../wxui/query_sources.py:1097
+msgid "Log in First"
+msgstr ""
+
+#: ../wxui/query_sources.py:1134
+msgid "Logged in"
 msgstr ""
 
 #: ../wxui/bugreport.py:343
 msgid "Login failed: Check your username and password"
 msgstr "Грешка при вход: проверете потребителското име и паролата"
 
-#: ../drivers/uvk5.py:1765
+#: ../drivers/uvk5.py:1845
 msgid "Logo string 1 (12 characters)"
 msgstr "Логотип низ 1 (12 знака)"
 
-#: ../drivers/uvk5.py:1772
+#: ../drivers/uvk5.py:1852
 msgid "Logo string 2 (12 characters)"
 msgstr "Логотип низ 2 (12 знака)"
 
@@ -1856,18 +2298,31 @@ msgstr "Логотип низ 2 (12 знака)"
 msgid "Longitude"
 msgstr "Географска дължина"
 
+#: ../drivers/ft450d.py:1447
+msgid "Makes the CW sidetone volume follow the AF GAIN knob, offset by the CW sidetone linked volume. When off, the sidetone plays at the CW sidetone fixed volume whatever the AF GAIN setting."
+msgstr ""
+
+#: ../drivers/ft450d.py:1556
+msgid "Makes the beep volume follow the AF GAIN knob, offset by the Linked beep volume. When off, the beep plays at the Fixed beep volume whatever the AF GAIN setting."
+msgstr ""
+
 #: ../wxui/memedit.py:2061
 #, python-format
 msgid "Manual edit of memory %i"
 msgstr ""
 
-#: ../wxui/main.py:203
+#: ../wxui/main.py:142
 msgid "Memories"
 msgstr "Записи"
 
-#: ../drivers/uvk5.py:2088
+#: ../drivers/uvk5.py:2164
 msgid "Memories are read-only due to unsupported firmware version"
 msgstr "Записите не могат да бъдат променяни поради неподдържана версия на управляващия софтуер"
+
+#: ../wxui/bankedit.py:263
+#, python-format
+msgid "Memory %i could not be loaded, so its bank membership cannot be changed"
+msgstr ""
 
 #: ../wxui/memedit.py:2090
 #, python-format
@@ -1887,7 +2342,7 @@ msgstr "Име на поле от записите (едно от %s)"
 msgid "Memory label (stored in radio)"
 msgstr "Етикет на записа (пази се в станцията)"
 
-#: ../wxui/bankedit.py:242
+#: ../wxui/bankedit.py:251
 msgid "Memory must be in a bank to be edited"
 msgstr "За да бъде променян, записът трябва да принадлежи към банка"
 
@@ -1901,7 +2356,17 @@ msgstr "Записът {num} не е в банката {bank}"
 msgid "Mode"
 msgstr "Режим"
 
-#: ../wxui/clone.py:357
+#: ../chirp_common.py:593
+#, python-format
+msgid "Mode %r is not valid"
+msgstr ""
+
+#: ../chirp_common.py:1128
+#, python-format
+msgid "Mode %s not supported"
+msgstr ""
+
+#: ../wxui/clone.py:367
 msgid "Model"
 msgstr "Модел"
 
@@ -1909,15 +2374,15 @@ msgstr "Модел"
 msgid "Modes"
 msgstr "Режими"
 
-#: ../wxui/main.py:1895
+#: ../wxui/main.py:1994
 msgid "Module"
 msgstr "Модул"
 
-#: ../wxui/main.py:1867
+#: ../wxui/main.py:1966
 msgid "Module Loaded"
 msgstr "Зареден е модул"
 
-#: ../wxui/main.py:2066
+#: ../wxui/main.py:2171
 msgid "Module loaded successfully"
 msgstr "Модулът е зареден"
 
@@ -1925,12 +2390,12 @@ msgstr "Модулът е зареден"
 msgid "More Info"
 msgstr "Сведения"
 
-#: ../wxui/clone.py:515
+#: ../wxui/clone.py:525
 #, python-format
 msgid "More than one port found: %s"
 msgstr "Намерен е повече от един порт: %s"
 
-#: ../wxui/memedit.py:2743
+#: ../wxui/memedit.py:2744
 #, python-format
 msgid "Move %i memories"
 msgstr ""
@@ -1943,17 +2408,42 @@ msgstr "Преместване надолу"
 msgid "Move Up"
 msgstr "Преместване нагоре"
 
-#: ../wxui/memedit.py:2713
+#: ../wxui/memedit.py:2714
 msgid "Move operations are disabled while the view is sorted"
 msgstr "Действията за преместване са забранени при сортиран изглед"
 
-#: ../wxui/main.py:692
+#: ../drivers/ft450d.py:1003
+msgid "Moves the part of the passband the contour filter acts on, from -2 at the low end through Center to +2 at the high end."
+msgstr ""
+
+#: ../wxui/memedit.py:1449
+msgid "Name"
+msgstr "Име"
+
+#: ../chirp_common.py:1237
+#, python-format
+msgid "Name character `%s' not supported"
+msgstr ""
+
+#: ../sources/base.py:58
+msgid "Network source is immutable"
+msgstr ""
+
+#: ../wxui/main.py:788
 msgid "New Window"
 msgstr "Нов прозорец"
 
-#: ../wxui/main.py:2166
+#: ../wxui/main.py:2271
 msgid "New version available"
 msgstr "Налично е ново издание"
+
+#: ../wxui/memedit.py:2671
+msgid "No channels extracted from paste"
+msgstr ""
+
+#: ../drivers/generic_csv.py:265
+msgid "No channels found"
+msgstr ""
 
 #: ../wxui/memedit.py:2390
 msgid "No empty rows below!"
@@ -1964,11 +2454,11 @@ msgstr "Отдолу липсват празни редове!"
 msgid "No example for %s"
 msgstr "Липсва пример за %s"
 
-#: ../wxui/developer.py:706
+#: ../wxui/developer.py:710
 msgid "No modules found"
 msgstr "Не са намерени модули"
 
-#: ../wxui/developer.py:705
+#: ../wxui/developer.py:709
 #, python-format
 msgid "No modules found in issue %i"
 msgstr "Не са намерени модули в доклад за дефект %i"
@@ -1977,26 +2467,55 @@ msgstr "Не са намерени модули в доклад за дефек�
 msgid "No more space available; some memories were not applied"
 msgstr "Няма достатъчно място; някои записи не са приложени"
 
-#: ../sources/mapy73pl.py:57 ../sources/przemienniki_eu.py:53
-#: ../sources/przemienniki_net.py:55
+#: ../sources/przemienniki_eu.py:53 ../sources/przemienniki_net.py:55
+#: ../sources/mapy73pl.py:57
 msgid "No results"
 msgstr "Няма резултати"
 
-#: ../sources/repeaterbook.py:371
+#: ../sources/repeaterbook.py:204 ../sources/repeaterbook.py:371
 msgid "No results!"
 msgstr "Няма резултати!"
 
-#: ../wxui/main.py:2076
+#: ../import_logic.py:46 ../import_logic.py:64
+#, python-format
+msgid "No room to add callsign %s"
+msgstr ""
+
+#: ../wxui/main.py:2181
 msgid "No traces stored"
+msgstr ""
+
+#: ../sources/amsats.py:277
+msgid "No valid SatNOGS frequencies found!"
+msgstr ""
+
+#: ../sources/amsats.py:133
+msgid "No valid satellite frequencies found!"
 msgstr ""
 
 #: ../wxui/query_sources.py:45 ../wxui/memedit.py:1407
 msgid "Number"
 msgstr "Число"
 
+#: ../drivers/baofeng_uv17Pro.py:672
+msgid "Off is level 0."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:867
+msgid "Off keeps the alarm silent on this radio's own speaker."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:687
+msgid "Off places no limit on the length of a transmission."
+msgstr ""
+
 #: ../wxui/memedit.py:346
 msgid "Offset"
 msgstr "Отместване"
+
+#: ../chirp_common.py:541
+msgid "Offset is not a valid number"
+msgstr ""
 
 #: ../wxui/memedit.py:344
 msgid ""
@@ -2024,7 +2543,7 @@ msgstr "Само определени модели"
 msgid "Only certain prefixes"
 msgstr "Само определени наставвки"
 
-#: ../wxui/main.py:334
+#: ../wxui/main.py:273
 msgid "Only memory tabs may be exported"
 msgstr "Само разделите съдържащи записи могат да бъдат изнасяни"
 
@@ -2032,35 +2551,35 @@ msgstr "Само разделите съдържащи записи могат �
 msgid "Only working repeaters"
 msgstr "Само работещи ретранслатори"
 
-#: ../wxui/main.py:1071 ../wxui/main.py:1500
+#: ../wxui/main.py:1167 ../wxui/main.py:1599
 msgid "Open"
 msgstr "Отваряне"
 
-#: ../wxui/main.py:721
+#: ../wxui/main.py:817
 msgid "Open Recent"
 msgstr "Отваряне на предишни"
 
-#: ../wxui/main.py:703
+#: ../wxui/main.py:799
 msgid "Open Stock Config"
 msgstr "Стандартни настройки"
 
-#: ../wxui/main.py:1072 ../wxui/main.py:1376
+#: ../wxui/main.py:1168 ../wxui/main.py:1475
 msgid "Open a file"
 msgstr "Отваряне на файл"
 
-#: ../wxui/main.py:1913
+#: ../wxui/main.py:2012
 msgid "Open a module"
 msgstr "Отваряне на модул"
 
-#: ../wxui/main.py:1003
+#: ../wxui/main.py:1099
 msgid "Open debug log"
 msgstr "Отваряне на дневник"
 
-#: ../wxui/main.py:545
+#: ../wxui/main.py:620
 msgid "Open in new window"
 msgstr "Отваряне в нов прозорец"
 
-#: ../wxui/main.py:1034
+#: ../wxui/main.py:1130
 msgid "Open last serial trace"
 msgstr ""
 
@@ -2068,7 +2587,7 @@ msgstr ""
 msgid "Open repeaters only"
 msgstr "Отваряне само на ретранслатори"
 
-#: ../wxui/main.py:650
+#: ../wxui/main.py:746
 msgid "Open stock config directory"
 msgstr "Папка със стандартни настройки"
 
@@ -2123,12 +2642,17 @@ msgstr ""
 "Само част от повече от 130-те достъпни настройки на\n"
 "станцията се поддържат от това издание.\n"
 
-#: ../sources/mapy73pl.py:52 ../sources/przemienniki_eu.py:48
-#: ../sources/przemienniki_net.py:50
+#: ../sources/repeaterbook.py:299 ../sources/dmrmarc.py:52
+#: ../sources/przemienniki_eu.py:48 ../sources/przemienniki_net.py:50
+#: ../sources/mapy73pl.py:52
 msgid "Parsing"
 msgstr "Разбор"
 
-#: ../wxui/bugreport.py:276
+#: ../sources/amsats.py:117
+msgid "Parsing data..."
+msgstr ""
+
+#: ../wxui/bugreport.py:276 ../wxui/query_sources.py:1062
 msgid "Password"
 msgstr "Парола"
 
@@ -2140,7 +2664,7 @@ msgstr "Поставяне"
 msgid "Paste external memories"
 msgstr ""
 
-#: ../wxui/memedit.py:2656
+#: ../wxui/memedit.py:2657
 msgid "Paste memories"
 msgstr ""
 
@@ -2164,7 +2688,15 @@ msgstr "Поставените записи ще презапишат запис
 msgid "Pasted memory will overwrite memory %s"
 msgstr "Поставеният запис ще презапише запис № %s"
 
-#: ../wxui/main.py:2170
+#: ../drivers/baofeng_uv17Pro.py:697
+msgid "Periodically checks both the A and B displayed frequencies. When either receives a signal, the radio stays on it until that signal disappears."
+msgstr ""
+
+#: ../drivers/ft450d.py:1023
+msgid "Places the IF notch filter below the center of the passband, at the center or above it. The exact notch frequency is fine tuned on the radio with the DSP/SEL knob."
+msgstr ""
+
+#: ../wxui/main.py:2275
 msgid "Please be sure to quit CHIRP before installing the new version!"
 msgstr "Излезте от CHIRP преди да инсталирате ново издание!"
 
@@ -2172,7 +2704,7 @@ msgstr "Излезте от CHIRP преди да инсталирате нов�
 msgid "Please check the bug number and try again. If you do actually want to report against this bug, please comment on it via the website and ask for it to be re-opened."
 msgstr ""
 
-#: ../wxui/main.py:1995
+#: ../wxui/main.py:2096
 msgid "Please note that developer mode is intended for use by developers of the CHIRP project, or under the direction of a developer. It enables behaviors and functions that can damage your computer and your radio if not used with EXTREME care. You have been warned! Proceed anyway?"
 msgstr "Внимание! Режимът за разработчици е предназначен за употреба от разработчиците на проекта CHIRP или под ръководството на такъв разработчик. Режимът включва възможности и действия, които могат да повредят компютъра и радиостанцията ви, ако не ги използвате с ИЗКЛЮЧИТЕЛНА предпазливост. Желаете ли да продължите?"
 
@@ -2180,7 +2712,7 @@ msgstr "Внимание! Режимът за разработчици е пре
 msgid "Please wait"
 msgstr "Изчакайте"
 
-#: ../wxui/clone.py:492
+#: ../wxui/clone.py:502
 msgid "Plug in your cable and then click OK"
 msgstr "Включете кабела и натиснете „Добре“"
 
@@ -2188,13 +2720,23 @@ msgstr "Включете кабела и натиснете „Добре“"
 msgid "Polish repeaters database"
 msgstr "Ретранслатори в Полша"
 
-#: ../wxui/clone.py:342
+#: ../wxui/clone.py:352
 msgid "Port"
 msgstr "Порт"
 
 #: ../wxui/memedit.py:425
 msgid "Power"
 msgstr "Мощност"
+
+#: ../chirp_common.py:1218
+#, python-format
+msgid "Power level %s is out of radio's range"
+msgstr ""
+
+#: ../chirp_common.py:1224
+#, python-format
+msgid "Power level %s not supported"
+msgstr ""
 
 #: ../wxui/query_sources.py:877
 msgid "Prefixes"
@@ -2204,7 +2746,11 @@ msgstr "Представки"
 msgid "Press enter to set this in memory"
 msgstr "За да зададете тази стойност на записа, натиснете бутона Enter"
 
-#: ../wxui/main.py:757
+#: ../drivers/baofeng_uv17Pro.py:1568
+msgid "Prevents transmitting on a channel that is already in use. Pressing PTT on a busy channel sounds an alert tone instead of keying the transmitter."
+msgstr ""
+
+#: ../wxui/main.py:853
 msgid "Print Preview"
 msgstr "Преглед за отпечатване"
 
@@ -2212,7 +2758,28 @@ msgstr "Преглед за отпечатване"
 msgid "Printing"
 msgstr "Отпечатване"
 
-#: ../wxui/clone.py:526
+#: ../sources/amsats.py:247
+msgid "Processing data..."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:572
+#, python-format
+msgid "Programs DTMF code %i. A channel or VFO can select this code as its PTT-ID and send it when PTT is pressed, released, or both."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:2697
+msgid "Programs the DTMF code sent at the beginning of a transmission (BOT)."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:2708
+msgid "Programs the DTMF code sent at the end of a transmission (EOT)."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:602
+msgid "Programs the radio's numeric Automatic Number Identification code. ANI is a DTMF PTT-ID that can identify this radio to a dispatcher or other compatible equipment."
+msgstr ""
+
+#: ../wxui/clone.py:536
 msgid "Prolific USB device"
 msgstr "USB устройство на Prolific"
 
@@ -2228,16 +2795,20 @@ msgstr "Име на свойство"
 msgid "Property Value"
 msgstr "Стойност на свойство"
 
+#: ../wxui/query_sources.py:1093
+msgid "Province"
+msgstr ""
+
 #: ../wxui/query_sources.py:833
 msgid "QTH Locator"
 msgstr ""
 
-#: ../wxui/main.py:2104
+#: ../wxui/main.py:2209
 #, python-format
 msgid "Query %s"
 msgstr "Заявка към %s"
 
-#: ../wxui/main.py:882
+#: ../wxui/main.py:978
 msgid "Query Source"
 msgstr "Заявки"
 
@@ -2253,42 +2824,46 @@ msgstr "Заявката е с правилен синтаксис"
 msgid "Query syntax help"
 msgstr "Помощ за синтаксиса"
 
-#: ../sources/mapy73pl.py:36 ../sources/przemienniki_eu.py:36
-#: ../sources/przemienniki_net.py:36
+#: ../sources/dmrmarc.py:40 ../sources/przemienniki_eu.py:36
+#: ../sources/przemienniki_net.py:36 ../sources/mapy73pl.py:36
 msgid "Querying"
 msgstr "Търсене"
+
+#: ../sources/radioreference.py:119
+msgid "Querying..."
+msgstr ""
 
 #: ../wxui/memedit.py:622
 msgid "RX DTCS"
 msgstr "RX DTCS"
 
-#: ../wxui/main.py:1042
+#: ../wxui/main.py:1138
 msgid "Radio"
 msgstr "Станция"
 
-#: ../wxui/radioinfo.py:65
+#: ../wxui/radioinfo.py:75
 msgid "Radio Info: Driver"
 msgstr ""
 
-#: ../wxui/radioinfo.py:46
+#: ../wxui/radioinfo.py:56
 msgid "Radio Info: Features"
 msgstr ""
 
-#: ../wxui/radioinfo.py:92
+#: ../wxui/radioinfo.py:102
 msgid "Radio Info: Icom"
 msgstr ""
 
-#: ../wxui/radioinfo.py:120
+#: ../wxui/radioinfo.py:130
 msgid "Radio Info: Image Metadata"
 msgstr ""
 
-#: ../drivers/ft450d.py:576 ../drivers/ft60.py:89 ../drivers/ft60.py:91
+#: ../drivers/ft60.py:89 ../drivers/ft60.py:91 ../drivers/ft450d.py:582
 #: ../drivers/ft817.py:410
 #, python-format
 msgid "Radio did not ack block %i"
 msgstr "Станцията не е приела блок %i"
 
-#: ../wxui/clone.py:783 ../wxui/clone.py:883
+#: ../wxui/clone.py:793 ../wxui/clone.py:893
 msgid "Radio information"
 msgstr "Сведения за станцията"
 
@@ -2322,11 +2897,11 @@ msgstr "Код на DTCS на приемане"
 msgid "Receive frequency"
 msgstr "Честота на приемане"
 
-#: ../wxui/clone.py:608
+#: ../wxui/clone.py:618
 msgid "Recent"
 msgstr "Последно използвани станции"
 
-#: ../wxui/clone.py:349
+#: ../wxui/clone.py:359
 msgid "Recent..."
 msgstr "Последни…"
 
@@ -2338,6 +2913,10 @@ msgstr "Препоръчваме ви да използвате 55.2"
 msgid "Redo"
 msgstr "Повтаряне"
 
+#: ../drivers/ft450d.py:968
+msgid "Reduces all incoming signals by 20 dB, for use when extremely strong nearby stations or high noise levels degrade reception. Between 30 kHz and 1.7 MHz the radio always attenuates, whatever this setting."
+msgstr ""
+
 #: ../wxui/common.py:722
 msgid "Refresh required"
 msgstr "Необходимо е презареждане"
@@ -2347,11 +2926,21 @@ msgstr "Необходимо е презареждане"
 msgid "Refreshed memory %s"
 msgstr "Презареден е запис № %s"
 
-#: ../wxui/main.py:943
+#: ../drivers/uvk5_cn.py:372
+#, python-format
+msgid "Refusing to read 0x%4.4x..0x%4.4x: this driver only reads below 0x%4.4x"
+msgstr ""
+
+#: ../drivers/uvk5_cn.py:399
+#, python-format
+msgid "Refusing to write 0x%4.4x..0x%4.4x: 0x%4.4x is the start of the multi-bootloader on this firmware and writing there can destroy the radio"
+msgstr ""
+
+#: ../wxui/main.py:1039
 msgid "Reload Driver"
 msgstr "Презареждане на управляващия софтуер"
 
-#: ../wxui/main.py:952
+#: ../wxui/main.py:1048
 msgid "Reload Driver and File"
 msgstr "Презареждане на управляващия софтуер и файлове"
 
@@ -2359,15 +2948,15 @@ msgstr "Презареждане на управляващия софтуер и
 msgid "Reload required"
 msgstr "Необходимо е презареждане"
 
-#: ../wxui/clone.py:628
+#: ../wxui/clone.py:638
 msgid "Remove"
 msgstr "Премахване"
 
-#: ../wxui/clone.py:629
+#: ../wxui/clone.py:639
 msgid "Remove selected model from list"
 msgstr "Премахване на избрания модел от списъка"
 
-#: ../wxui/bankedit.py:205
+#: ../wxui/bankedit.py:214
 msgid "Rename bank"
 msgstr "Преименуване на банка"
 
@@ -2377,7 +2966,11 @@ msgid ""
 "worldwide, FREE repeater directory."
 msgstr "RepeaterBook е най-изчерпателният, безплатен справочник за радиолюбителски ретранслатори в света."
 
-#: ../wxui/main.py:1025
+#: ../sources/repeaterbook.py:182
+msgid "RepeaterBook returned invalid response"
+msgstr ""
+
+#: ../wxui/main.py:1121
 msgid "Report or update a bug..."
 msgstr "Доклад или промняна на дефект…"
 
@@ -2386,26 +2979,26 @@ msgstr "Доклад или промняна на дефект…"
 msgid "Reporting a new bug: %r"
 msgstr "Доклад на нов дефект: %r"
 
-#: ../wxui/main.py:991
+#: ../wxui/main.py:1087
 msgid "Reporting enabled"
 msgstr "Докладването е включено"
 
-#: ../wxui/main.py:2015
+#: ../wxui/main.py:2120
 msgid "Reporting helps the CHIRP project know which radio models and OS platforms to spend our limited efforts on. We would really appreciate if you left it enabled. Really disable reporting?"
 msgstr "Докладването помага на проекта CHIRP да разполага с данните за кои модели радиостанции и операционни системи да насочи ограничените си ресурси. Високо бихме оценили ако оставите стойността включена. Желаете ли докладването да бъде изключено?"
 
-#: ../wxui/main.py:1661 ../wxui/main.py:2009
+#: ../wxui/main.py:1760 ../wxui/main.py:2113
 msgid "Restart Required"
 msgstr "Необходим е рестарт"
 
-#: ../wxui/main.py:715
+#: ../wxui/main.py:811
 #, python-format
 msgid "Restore %i tab"
 msgid_plural "Restore %i tabs"
 msgstr[0] "Възстановен е %i раздел"
 msgstr[1] "Възстановени са %i раздела"
 
-#: ../wxui/main.py:847
+#: ../wxui/main.py:943
 msgid "Restore tabs on start"
 msgstr "Възстановяване разделите при стартиране"
 
@@ -2425,15 +3018,15 @@ msgid ""
 "up-to-date transmitter data."
 msgstr ""
 
-#: ../wxui/main.py:1073
+#: ../wxui/main.py:1169
 msgid "Save"
 msgstr "Запазване"
 
-#: ../wxui/main.py:1535
+#: ../wxui/main.py:1634
 msgid "Save before closing?"
 msgstr "Запазване преди затваряне?"
 
-#: ../wxui/main.py:1074 ../wxui/main.py:1459
+#: ../wxui/main.py:1170 ../wxui/main.py:1558
 msgid "Save file"
 msgstr "Запазване на файл"
 
@@ -2445,19 +3038,19 @@ msgstr "Запазени настройки"
 msgid "Scan control (skip, include, priority, etc)"
 msgstr "Управление на сканиране (прескачане, включване, приоритет и т.н.)"
 
-#: ../drivers/uvk5.py:859
+#: ../drivers/uvk5.py:940
 msgid "Scanlists"
 msgstr "Списъци за сканиране"
 
-#: ../drivers/ksun_m6.py:418 ../drivers/uvk5.py:855
+#: ../drivers/ksun_m6.py:418 ../drivers/uvk5.py:936
 msgid "Scrambler"
 msgstr "Шифроване"
 
-#: ../wxui/developer.py:677
+#: ../wxui/developer.py:681
 msgid "Security Risk"
 msgstr "Риск за сигурността"
 
-#: ../wxui/main.py:933
+#: ../wxui/main.py:1029
 msgid "Select Bandplan..."
 msgstr "Разпределение на честотните ленти…"
 
@@ -2466,7 +3059,7 @@ msgstr "Разпределение на честотните ленти…"
 msgid "Select Bands"
 msgstr "Избор на честотни ленти"
 
-#: ../wxui/main.py:1644
+#: ../wxui/main.py:1743
 msgid "Select Language"
 msgstr "Избор на език"
 
@@ -2478,11 +3071,11 @@ msgstr "Избор на режими"
 msgid "Select Modes to Import"
 msgstr ""
 
-#: ../wxui/main.py:2087
+#: ../wxui/main.py:2192
 msgid "Select a bandplan"
 msgstr "Изберете разпределението на честотните ленти"
 
-#: ../wxui/main.py:1202
+#: ../wxui/main.py:1301
 msgid "Select a tab and memory to diff"
 msgstr "Изберете раздел и запис от паметта, които да бъдат сравнени"
 
@@ -2490,15 +3083,303 @@ msgstr "Изберете раздел и запис от паметта, кои�
 msgid "Select prefixes"
 msgstr "Избор на представка"
 
+#: ../drivers/baofeng_uv17Pro.py:990
+msgid "Selects Frequency (VFO) mode for direct tuning or Channel (MR) mode for programmed memories on display A."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:999
+msgid "Selects Frequency (VFO) mode for direct tuning or Channel (MR) mode for programmed memories on display B."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1211
+msgid "Selects VFO A's transmitter power. Use the lowest power that provides reliable communication."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1222
+msgid "Selects VFO B's transmitter power. Use the lowest power that provides reliable communication."
+msgstr ""
+
+#: ../drivers/ft450d.py:1706
+msgid "Selects how quickly the automatic gain control lets the receiver recover after a strong signal. Fast suits CW and data, Slow suits SSB and AM, and Auto picks Slow for SSB and AM and Fast for the other modes. With AGC off the S-meter no longer moves and strong signals are likely to distort."
+msgstr ""
+
+#: ../drivers/ft450d.py:1817
+msgid "Selects one of ten DSP equalizer curves for your transmitted voice. 0 is flat, 1 to 3 reduce the low, middle or high frequencies, and 4 to 6 boost the high, middle or low frequencies. 7 boosts the lows and reduces the highs, 8 reduces the lows and boosts the middle, and 9 reduces the lows and boosts the highs."
+msgstr ""
+
+#: ../drivers/ft450d.py:1474
+msgid "Selects the characters the CW training feature sends: digits only, letters only, or both mixed. Training plays random five character Morse groups through the sidetone at the CW speed, without transmitting."
+msgstr ""
+
+#: ../drivers/ft450d.py:949
+msgid "Selects the data mode a DIG channel uses. RTTY is FSK radioteletype keyed by a terminal unit or RTTY software, while USER-L and USER-U carry audio based data modes such as packet on the lower or upper sideband. N/A is for channels that are not in DIG mode."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:722
+msgid "Selects the language of the menus and the spoken voice prompts."
+msgstr ""
+
+#: ../drivers/ft450d.py:1791
+msgid "Selects the mark tone for RTTY: 2125 Hz for high tone operation or 1275 Hz for low tone operation."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:2686
+msgid "Selects the special DTMF digit interpreted as a group-call wildcard by the decoder. Off assigns no group-call digit."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:2678
+msgid "Selects the special DTMF digit interpreted as a separator by the decoder."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1008
+msgid "Selects the squelch-tail elimination setting used for communication through a compatible repeater. Use 0 ms when the repeater does not support this feature."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:822
+msgid "Selects the tone-burst frequency sent for repeater access."
+msgstr ""
+
+#: ../drivers/ft450d.py:1605
+msgid "Selects what the LOCK button locks. Frequencies locks the controls that change the frequency, including the microphone UP, DWN and FAST keys. Panel locks all front panel keys and knobs, and All locks both the front panel and the microphone keys. POWER and LOCK always remain usable."
+msgstr ""
+
+#: ../drivers/ft450d.py:1372
+msgid "Selects what the TUNE button controls. ATAS is the optional ATAS-100/-120 active-tuning antenna, EXT ATU the optional FC-40 external tuner, and INT ATU the built-in tuner acting on the transmit signal only, while INTRATU puts the built-in tuner in the receive path as well. F-TRANS instead sends this radio's frequency to a second radio of the same model whenever TUNE is pressed, for single operator two radio (SO2R) operation."
+msgstr ""
+
+#: ../drivers/ft450d.py:1737
+msgid "Selects what the meter shows while transmitting: PO the average power output, ALC the relative ALC voltage, or SWR the standing wave ratio of the antenna. While receiving it always shows the signal strength."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1611
+msgid "Selects whether the radio uses DTMF codes, together with CTCSS or DCS, to decide when to unmute the speaker on this channel. Off unmutes it on the correct CTCSS or DCS alone."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1257
+#, python-format
+msgid "Selects which of the %i programmed DTMF PTT-ID codes VFO A uses. Edit the code itself under DTMF Encode Settings."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1269
+#, python-format
+msgid "Selects which of the %i programmed DTMF PTT-ID codes VFO B uses. Edit the code itself under DTMF Encode Settings."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1585
+#, python-format
+msgid "Selects which of the %i programmed DTMF PTT-ID codes this channel transmits. Edit the code itself under DTMF Encode Settings."
+msgstr ""
+
+#: ../drivers/ft450d.py:1055
+msgid "Selects which of the eleven noise reduction algorithms is used. Each one is designed for a different kind of noise, so try them in turn to find the one that best suppresses the noise currently heard. Off also turns DSP Noise Reduction off."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1233
+msgid "Selects wide or narrow FM for VFO A. Use Narrow where required by the channel plan to reduce interference to adjacent channels."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1245
+msgid "Selects wide or narrow FM for VFO B. Use Narrow where required by the channel plan to reduce interference to adjacent channels."
+msgstr ""
+
+#: ../wxui/bugreport.py:592
+msgid "Sending report..."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:769
+msgid "Sends a short tone at the end of each transmission so other stations can hear that you released PTT."
+msgstr ""
+
 #: ../wxui/query_sources.py:357
 msgid "Service"
 msgstr "Услуга"
 
-#: ../wxui/main.py:216
+#: ../drivers/baofeng_uv17Pro.py:1150
+msgid "Sets VFO A's repeater shift direction. + transmits above the receive frequency, - transmits below it, and Off uses the same frequency for transmit and receive."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1163
+msgid "Sets VFO B's repeater shift direction. + transmits above the receive frequency, - transmits below it, and Off uses the same frequency for transmit and receive."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1281
+msgid "Sets how far VFO A moves for each tuning step and while scanning in Frequency mode. Choose the spacing used by the frequencies you intend to tune."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1294
+msgid "Sets how far VFO B moves for each tuning step and while scanning in Frequency mode. Choose the spacing used by the frequencies you intend to tune."
+msgstr ""
+
+#: ../drivers/ft450d.py:1630
+msgid "Sets how far the frequency moves for each step of the MAIN DIAL knob: 1, 10 or 20 Hz in SSB and CW, 100 or 200 Hz in AM and FM."
+msgstr ""
+
+#: ../drivers/ft450d.py:1639
+msgid "Sets how long a button has to be held to activate its press and hold function. A shorter press activates the button's normal function."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:620
+msgid "Sets how long each DTMF tone is transmitted. Increase this if the receiving system does not reliably decode the digits."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:654
+msgid "Sets how long the DTMF decoder remains active after a valid code before returning to its normal state."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:882
+msgid "Sets how long the menu stays open without a key press before the radio leaves it."
+msgstr ""
+
+#: ../drivers/ft450d.py:1397
+msgid "Sets how long the transmitter stays on after you stop sending in semi break-in CW, in steps of 10 ms, so 25 means 250 ms. A longer delay suits operators who pause often while sending. The radio can also be set to FULL, full break-in, which lets you hear between the characters you send."
+msgstr ""
+
+#: ../drivers/ft450d.py:1749
+msgid "Sets how long the transmitter stays on after you stop speaking in VOX operation, in steps of 100 ms, so 5 means 500 ms. A longer delay keeps short pauses in your speech from switching the radio back to receive."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:741
+msgid "Sets how many seconds the display backlight remains on after a key press or radio activity."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:666
+msgid "Sets how strong a received signal must be before the speaker unmutes. 0 leaves the squelch open so you hear noise all the time, higher values reject more weak signals and noise. Raise this value if the speaker keeps unmuting on interference, lower it if distant stations are being cut off."
+msgstr ""
+
+#: ../drivers/ft450d.py:995
+msgid "Sets how strongly the contour filter boosts or cuts. Low gives a gentle effect, High a stronger one."
+msgstr ""
+
+#: ../drivers/ft450d.py:1466
+msgid "Sets the CW sidetone volume, from 0 to 100, used when CW sidetone volume Linked is off."
+msgstr ""
+
+#: ../drivers/ft450d.py:1767
+msgid "Sets the VOX sensitivity used in DIG mode, so that the audio from the data equipment switches the transmitter on without a PTT line. 0 turns VOX off in DIG mode."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1041
+msgid "Sets the VOX sensitivity. Too sensitive a setting keys the transmitter on the noise around the radio, too insensitive a setting fails to pick up your voice."
+msgstr ""
+
+#: ../drivers/ft450d.py:1758
+msgid "Sets the VOX sensitivity. Too sensitive a setting keys the transmitter on the noise around the radio, too insensitive a setting fails to pick up your voice. 1 is the least sensitive setting and 100 the most."
+msgstr ""
+
+#: ../drivers/ft450d.py:1303
+msgid "Sets the baud rate of the CAT jack, which must match the computer control software. Data turns the CAT jack into an RTTY interface instead: RTTY software keys the FSK shift through the serial data input and uses RTS as PTT."
+msgstr ""
+
+#: ../drivers/ft450d.py:1564
+msgid "Sets the beep volume relative to the receive audio level set by AF GAIN, when Beep volume Linked is on. 0 makes the beep as loud as the received audio, negative values make it quieter and positive values louder."
+msgstr ""
+
+#: ../drivers/ft450d.py:1573
+msgid "Sets the beep volume, from 0 to 100, used when Beep volume Linked is off."
+msgstr ""
+
+#: ../drivers/ft450d.py:1586
+msgid "Sets the brightness of the display illumination, from 1 to 8."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:592
+#, python-format
+msgid "Sets the call name for DTMF code %i, up to 10 characters long."
+msgstr ""
+
+#: ../drivers/ft450d.py:1579
+msgid "Sets the contrast of the display, from 1 to 24. Changing it here has not been seen to have a visible effect on the radio."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:873
+msgid "Sets the current keypad-lock state."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1017
+msgid "Sets the delay before repeater squelch-tail elimination is applied. Match this timing to the repeater; use 0 ms when the feature is not required."
+msgstr ""
+
+#: ../drivers/ft450d.py:1438
+msgid "Sets the delay between closing the key and the carrier being transmitted in QSK operation with the built-in keyer. At 25 ms keep the CW speed at 50 wpm or below, and at 30 ms at 42 wpm or below, or the radio cannot transmit."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1186
+msgid "Sets the difference in MHz between VFO A's receive and transmit frequencies. The Shift setting determines whether this offset is added or subtracted."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1197
+msgid "Sets the difference in MHz between VFO B's receive and transmit frequencies. The Shift setting determines whether this offset is added or subtracted."
+msgstr ""
+
+#: ../drivers/ft450d.py:1429
+msgid "Sets the dot to dash ratio of the built-in electronic keyer. At 1:3.0, the standard weighting, a dash lasts three times as long as a dot."
+msgstr ""
+
+#: ../drivers/ft450d.py:1783
+msgid "Sets the frequency shift between the mark and space tones in FSK RTTY. Most amateur RTTY uses 170 Hz."
+msgstr ""
+
+#: ../drivers/ft450d.py:1829
+msgid "Sets the microphone gain for SSB, AM and FM. Use Low with a microphone that has a high output, Normal with the supplied hand microphone and High with a microphone that has a low output. The speech processor is off at Low and on at the other settings."
+msgstr ""
+
+#: ../drivers/ft450d.py:1345
+msgid "Sets the offset Quick Split applies. Holding SPLIT/STEP for a second sets the transmit VFO to the receive frequency plus this offset, in the same mode as the receive VFO, and turns split operation on."
+msgstr ""
+
+#: ../drivers/ft450d.py:1501
+msgid "Sets the pause in seconds between repeats of a CW beacon message. 0 turns the repeat off, so that each message is sent once per button press, as with a CW message keyer."
+msgstr ""
+
+#: ../drivers/ft450d.py:1409
+msgid "Sets the pitch of the CW sidetone, which is also the offset of the transmitted carrier and the center of the CW receive filter. Tuning a station in until its tone matches the sidetone puts you on its frequency."
+msgstr ""
+
+#: ../drivers/ft450d.py:1550
+msgid "Sets the pitch of the beep the radio sounds to confirm button presses."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1130
+msgid "Sets the receive frequency shown on display line A in Frequency (VFO) mode."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1139
+msgid "Sets the receive frequency shown on display line B in Frequency (VFO) mode."
+msgstr ""
+
+#: ../drivers/ft450d.py:1417
+msgid "Sets the sending speed of the built-in electronic keyer in words per minute. The radio can also show it in characters per minute, five times the wpm value. With a CW QSK delay of 25 ms keep it at 50 wpm or below, and with 30 ms at 42 wpm or below, or the radio cannot transmit."
+msgstr ""
+
+#: ../drivers/ft450d.py:1456
+msgid "Sets the sidetone volume relative to the receive audio level set by AF GAIN, when CW sidetone volume Linked is on. 0 makes the sidetone as loud as the received audio, negative values make it quieter and positive values louder."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:632
+msgid "Sets the silent gap between transmitted DTMF tones. Increase this if the receiving system cannot separate adjacent digits."
+msgstr ""
+
+#: ../drivers/ft450d.py:1294
+msgid "Sets the time-out timer for computer control commands arriving on the CAT jack. Command input that continues for longer than this time is cut off."
+msgstr ""
+
+#: ../drivers/ft450d.py:1385
+msgid "Sets the transmit power in watts. Use the lowest power that provides reliable communication, and a half to a third of full power for data transmissions longer than a few minutes."
+msgstr ""
+
+#: ../drivers/ft450d.py:1033
+msgid "Sets the width of the DSP IF filter. A narrower filter rejects interference close to the signal, a wider one sounds more natural when the band is quiet. The widths depend on the mode: 1.8, 2.4 or 3.0 kHz for SSB, 300 Hz, 500 Hz or 2.4 kHz for CW, 300 Hz, 2.4 or 3.0 kHz for DIG, 3.0, 6.0 or 9.0 kHz for AM, and 2.5 or 5.0 kHz for FM. A width the mode does not offer is replaced with the closest one it does."
+msgstr ""
+
+#: ../drivers/ft450d.py:1319
+msgid "Sets when the scan resumes after it has paused on a signal. 1 to 10 resumes after that many seconds, 0 selects BUSY, which waits until the signal has gone. In SSB, CW and SSB based data modes the scanner instead steps slowly across a signal, giving you time to stop it."
+msgstr ""
+
+#: ../wxui/main.py:155
 msgid "Settings"
 msgstr "Настройки"
 
-#: ../drivers/uvk5.py:2092
+#: ../drivers/uvk5.py:2168
 msgid "Settings are read-only due to unsupported firmware version"
 msgstr "Настройките не могат да бъдат променяни поради неподдържана версия на управляващия софтуер"
 
@@ -2511,11 +3392,19 @@ msgstr ""
 msgid "Shift amount (or transmit frequency) controlled by duplex"
 msgstr "Отместване (или честота на предаване) управлявано от дуплекса"
 
+#: ../drivers/ft450d.py:1329
+msgid "Shifts the frequency of the radio's CPU clock slightly. Only use it to move an internally generated spurious signal, or birdie, off a frequency you want to listen on."
+msgstr ""
+
+#: ../drivers/ft450d.py:1775
+msgid "Shifts the frequency shown on the display in the USER-L and USER-U data modes by this many hertz."
+msgstr ""
+
 #: ../wxui/memedit.py:2335 ../wxui/developer.py:101
 msgid "Show Raw Memory"
 msgstr "Показване на необработеното съдържание на записа"
 
-#: ../wxui/main.py:1009
+#: ../wxui/main.py:1105
 msgid "Show debug log location"
 msgstr "Папка с дневник"
 
@@ -2523,15 +3412,23 @@ msgstr "Папка с дневник"
 msgid "Show extra fields"
 msgstr "Допълнителни полета"
 
-#: ../wxui/main.py:1014
+#: ../wxui/main.py:1110
 msgid "Show image backup location"
 msgstr "Папка с резервни копия"
+
+#: ../drivers/ft450d.py:1254
+msgid "Shows all 62 items of the radio's Menu Mode. When off, the menu on the radio offers only the 16 most often used items."
+msgstr ""
 
 #: ../wxui/memedit.py:697
 msgid "Skip"
 msgstr "Пропускане"
 
-#: ../wxui/memedit.py:2647
+#: ../chirp_common.py:604
+msgid "Skip value is not valid"
+msgstr ""
+
+#: ../wxui/memedit.py:2648
 msgid "Some memories are incompatible with this radio"
 msgstr "Някои от записите са несъвместими със станцията"
 
@@ -2573,10 +3470,18 @@ msgstr "Сортиране по колона:"
 msgid "Sort memories"
 msgstr "Сортиране на записи"
 
-#: ../sources/mapy73pl.py:64 ../sources/przemienniki_eu.py:60
-#: ../sources/przemienniki_net.py:62
+#: ../sources/przemienniki_eu.py:60 ../sources/przemienniki_net.py:62
+#: ../sources/mapy73pl.py:64
 msgid "Sorting"
 msgstr "Сортиране"
+
+#: ../drivers/baofeng_uv17Pro.py:762
+msgid "Sounds a short confirmation tone as you operate the radio. Turn it off when the radio has to be used discreetly."
+msgstr ""
+
+#: ../drivers/ft450d.py:1723
+msgid "Speeds up tuning: the MAIN DIAL knob tunes ten times faster and the DSP/SEL knob twice as fast."
+msgstr ""
 
 #: ../wxui/query_sources.py:566
 msgid "State"
@@ -2586,13 +3491,25 @@ msgstr "Състояние"
 msgid "State/Province"
 msgstr "Щат или провинция"
 
-#: ../wxui/main.py:2067
+#: ../wxui/main.py:2172
 msgid "Success"
 msgstr "Успех"
 
 #: ../wxui/bugreport.py:734
 msgid "Successfully sent bug report:"
 msgstr "Докладът за дефект е изпратен:"
+
+#: ../drivers/ft450d.py:1492
+msgid "Swaps the dot and dash sides of a keyer paddle without rewiring it, for example for a left-handed operator. Normal sends dots from the plug tip and dashes from the ring, Reverse the other way round."
+msgstr ""
+
+#: ../drivers/ft450d.py:1807
+msgid "Swaps the mark and space tones of your transmitted RTTY signal."
+msgstr ""
+
+#: ../drivers/ft450d.py:1799
+msgid "Swaps the mark and space tones when receiving RTTY. Try Reverse if a station with a good signal cannot be decoded."
+msgstr ""
 
 #: ../wxui/memedit.py:348
 msgid "TX Frequency"
@@ -2602,7 +3519,7 @@ msgstr ""
 msgid "TX-RX DTCS polarity (normal or reversed)"
 msgstr "Полярност на DTCS при TX-RX (права или обратна)"
 
-#: ../drivers/ft4.py:732
+#: ../drivers/ft4.py:748
 msgid ""
 "Tested and mostly works, but may give you issues\n"
 "when using lesser common radio variants.\n"
@@ -2619,7 +3536,17 @@ msgstr ""
 msgid "The DMR-MARC Worldwide Network"
 msgstr "Глобална мрежа на DMR-MARC"
 
-#: ../drivers/ft450d.py:416
+#: ../drivers/uvk5_cn.py:568
+#, python-format
+msgid "The EEPROM size is set to 0x%(size)x bytes, but this driver only reads below 0x%(limit)x; 0x%(limit)x and above is the multi-bootloader on these firmwares. Correct the \"EEPROM size\" setting."
+msgstr ""
+
+#: ../drivers/uvk5_cn.py:577
+#, python-format
+msgid "The EEPROM size is set to 0x%(size)x bytes, but this driver only writes below 0x%(limit)x; 0x%(limit)x and above is the multi-bootloader on these firmwares. Correct the \"EEPROM size\" setting."
+msgstr ""
+
+#: ../drivers/ft450d.py:422
 msgid ""
 "The FT-450D radio driver loads the 'Special Channels' tab\n"
 "with the PMS scanning range memories (group 11), 60meter\n"
@@ -2636,7 +3563,7 @@ msgid ""
 "'DATA MODE' to select USER-U, USER-L and RTTY \n"
 msgstr ""
 
-#: ../drivers/boblov_x3plus.py:119
+#: ../drivers/boblov_x3plus.py:124
 msgid ""
 "The X3Plus driver is currently experimental.\n"
 "There are no known issues but you should proceed with caution.\n"
@@ -2644,7 +3571,7 @@ msgid ""
 "download to a CHIRP Radio Images (*.img) file.\n"
 msgstr ""
 
-#: ../wxui/developer.py:674
+#: ../wxui/developer.py:678
 msgid "The author of this module is not a recognized CHIRP developer. It is recommended that you not load this module as it could pose a security risk. Proceed anyway?"
 msgstr "Авторът на този модул не е признат разработчик на CHIRP. Препоръчително е да не зареждате модула, тъй като може да представлява риск за сигурността. Желаете ли да продължите въпреки риска?"
 
@@ -2660,7 +3587,17 @@ msgstr "Следните сведения ще бъдат изпратени:"
 msgid "The memory editor requires a reload in order to change the workflow. That will happen now. Any other open tabs will be updated the next time they are loaded."
 msgstr ""
 
-#: ../wxui/main.py:1491
+#: ../drivers/uvk5_cn.py:697
+#, python-format
+msgid "The name needs more than the %i bytes this name field holds"
+msgstr ""
+
+#: ../drivers/uvk5_cn.py:723
+#, python-format
+msgid "The profile %(profile)s suggests %(default)i bytes; this is only a guess and the radio is the authority. A loaded image sets this automatically, and anything at or above 0x%(limit)x is refused because that is the multi-bootloader region."
+msgstr ""
+
+#: ../wxui/main.py:1590
 #, python-format
 msgid "The recommended procedure for importing memories is to open the source file and copy/paste memories from it into your target image. If you continue with this import function, CHIRP will replace all memories in your currently-open file with those in %(file)s. Would you like to open this file to copy/paste memories across, or proceed with the import?"
 msgstr "Препоръчителната процедура за внасяне на записи е да отворите изходния файл и да копирате/поставите записите от него в таблицата. Ако продължите от тук, CHIRP ще замени всички текущи записи с тези от %(file)s. Желаете ли да отворите този файл, за да копирате/поставите записите ръчно, или да продължите с внасянето?"
@@ -2673,24 +3610,28 @@ msgstr "Този запис"
 msgid "This driver has been tested with v3 of the ID-5100. If your radio is not fully updated please help by opening a bug report with a debug log so we can add support for the other revisions."
 msgstr "Управляващият софтуер е изпробван с ревизия v3 на ID-5100. Ако радиостанцията ви не е напълно обновена, помогнете ни, като направите доклад за грешка с дневник за отстраняване на грешки, за да можем да добавим поддръжка за другите ревизии."
 
-#: ../drivers/radtel_rt490.py:1360 ../drivers/radtel_rt490.py:1362
-#: ../drivers/radtel_rt490.py:1364
+#: ../drivers/tyt_uvl15w.py:575
+msgid "This driver is built from TYT's published protocol and memory layout and has not yet been tested widely. Save a copy of a fresh download from your radio before uploading. The radio restarts at the end of every download and upload."
+msgstr ""
+
+#: ../drivers/radtel_rt490.py:1356 ../drivers/radtel_rt490.py:1358
+#: ../drivers/radtel_rt490.py:1360
 msgid "This driver is in development and should be considered as experimental."
 msgstr "Управляващият софтуер е в процес на разработка и трябва да бъде считан за изпитателен."
 
-#: ../drivers/uvk5.py:686
+#: ../drivers/uvk5.py:767
 msgid "This image is missing firmware information. It may have been generated with an old or modified version of CHIRP. It is advised that you download a fresh image from your radio and use that going forward for the best safety and compatibility."
 msgstr ""
 
-#: ../drivers/uvk5.py:2096
+#: ../drivers/uvk5.py:2172
 msgid "This image is read-only due to being from a radio with unsupported firmware"
 msgstr ""
 
-#: ../wxui/main.py:1743
+#: ../wxui/main.py:1842
 msgid "This is a live-mode radio, which means changes are sent to the radio in real-time as you make them. Upload is not necessary!"
 msgstr ""
 
-#: ../wxui/main.py:1749
+#: ../wxui/main.py:1848
 msgid "This is a radio-independent file and cannot be uploaded directly to a radio. Open a radio image (or download one from a radio) and then copy/paste items from this tab into that one in order to upload"
 msgstr ""
 
@@ -2702,7 +3643,18 @@ msgstr "Управляващият софтуер е в ранен етап на
 msgid "This is an early stage beta driver - upload at your own risk\n"
 msgstr "Управляващият софтуер е в ранен етап на бета - изпращайте към станцията на ваша отговорност\n"
 
-#: ../drivers/uvk5.py:613
+#: ../drivers/uvk5_cn.py:485
+msgid ""
+"This is an experimental driver for Quansheng UV-K5/UV-K6 radios running expanded Chinese third-party firmware (LOSEHU, LTS, UVE), which store channel names as GB2312 and use the split address EEPROM commands.\n"
+"\n"
+"It has been verified against one such radio, a LOSEHU131HS build: downloading, uploading and a whole-image read-back were checked there. Other builds in this family may behave differently, and a wrong write can harm your radio. Use at your own risk, and keep the image you download before changing anything: it can be used to restore the radio.\n"
+"\n"
+"- Writing at or above 0x40000 would overwrite the multi-bootloader that some of these builds install there, so this driver never writes that high and refuses an image that extends into it.\n"
+"- The default EEPROM size is derived from the reported firmware version and is only a guess; check the \"EEPROM size\" setting against your radio before uploading.\n"
+"- Settings (keys, DTMF, MDC, scan lists, boot logo, satellite data, calibration) are not supported."
+msgstr ""
+
+#: ../drivers/uvk5.py:694
 msgid ""
 "This is an experimental driver for the Quansheng UV-K5. It may harm your radio, or worse. Use at your own risk.\n"
 "\n"
@@ -2744,7 +3696,7 @@ msgid ""
 "If you can get into it, please check the radio and cable.\n"
 msgstr ""
 
-#: ../drivers/uvk5.py:1850
+#: ../drivers/uvk5_cn.py:739 ../drivers/uvk5.py:1930
 msgid "This should only be enabled if you are using modified firmware that supports wider frequency coverage. Enabling this will cause CHIRP not to enforce OEM restrictions and may lead to undefined or unregulated behavior. Use at your own risk!"
 msgstr ""
 
@@ -2759,13 +3711,22 @@ msgstr ""
 msgid "This tool will upload details about your system to an existing issue on the CHIRP tracker. It requires your username and password for chirpmyradio.com in order to work. Information about your system, including your debug log, config file, and any open image files will be uploaded. An attempt will be made to redact any personal information before it leaves your system."
 msgstr ""
 
-#: ../wxui/developer.py:684
+#: ../settings.py:85
+msgid "This value is not mutable"
+msgstr ""
+
+#: ../wxui/developer.py:688
 msgid "This will load a module from a website issue"
 msgstr "От тук се зарежда модул от докладван дефект"
 
 #: ../wxui/memedit.py:525
 msgid "Tone"
 msgstr "Тон"
+
+#: ../chirp_common.py:1145 ../chirp_common.py:1148
+#, python-format
+msgid "Tone %.1f not supported"
+msgstr ""
 
 #: ../wxui/memedit.py:1452
 msgid "Tone Mode"
@@ -2775,6 +3736,11 @@ msgstr "Режим на тона"
 msgid "Tone Squelch"
 msgstr "Тон за шумопод."
 
+#: ../chirp_common.py:1133
+#, python-format
+msgid "Tone mode %s not supported"
+msgstr ""
+
 #: ../wxui/memedit.py:151
 msgid "Tone squelch mode"
 msgstr "Режим на тона за шумоподавителя"
@@ -2782,6 +3748,10 @@ msgstr "Режим на тона за шумоподавителя"
 #: ../wxui/memedit.py:164
 msgid "Transmit Power"
 msgstr "Мощност на предаване"
+
+#: ../drivers/tyt_uvl15w.py:967
+msgid "Transmit frequency is outside the radio's transmit bands and may be refused by the radio"
+msgstr ""
 
 #: ../wxui/memedit.py:160
 msgid "Transmit shift, split mode, or transmit inhibit"
@@ -2803,20 +3773,83 @@ msgstr "Модулация на приемане или предаване (ЧМ
 msgid "Transmit/receive tone for TSQL mode, else receive tone"
 msgstr "В режим TSQL тон на приемане или предаване, в противен случай тон на приемане"
 
+#: ../drivers/ft450d.py:1363
+msgid "Transmits a short beep when PTT is released, before the radio returns to receive, to tell other stations that your transmission has ended."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:839
+msgid "Transmits a special end-of-transmission signal intended to reduce the squelch burst heard by another compatible handheld."
+msgstr ""
+
 #: ../wxui/memedit.py:462 ../wxui/memedit.py:1464
 msgid "Tuning Step"
 msgstr "Стъпка"
+
+#: ../chirp_common.py:1176
+#, python-format
+msgid "Tuning step %.2f not supported"
+msgstr ""
+
+#: ../chirp_common.py:598
+msgid "Tuning step is invalid"
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1083
+msgid "Turns on Bluetooth so that the radio can be programmed wirelessly from a phone app."
+msgstr ""
+
+#: ../drivers/ft450d.py:1337
+msgid "Turns on split frequency operation: the radio receives on VFO-A and transmits on VFO-B, or the other way round. The two VFOs may use different modes and even different bands."
+msgstr ""
+
+#: ../drivers/ft450d.py:976
+msgid "Turns on the DSP contour filter, which gently cuts or boosts one part of the receive passband. Cutting suppresses interference or excessive components of a signal, boosting brings out the components that make it easier to understand."
+msgstr ""
+
+#: ../drivers/ft450d.py:1045
+msgid "Turns on the DSP digital noise reduction, which reduces random background noise on the HF and 50 MHz bands. It is especially effective on SSB."
+msgstr ""
+
+#: ../drivers/ft450d.py:1686
+msgid "Turns on the IF noise blanker, which reduces short pulses of noise such as those from vehicle ignition systems."
+msgstr ""
+
+#: ../drivers/ft450d.py:1010
+msgid "Turns on the IF notch filter, a narrow and deep filter that removes a single interfering carrier or whistle from inside the receive passband."
+msgstr ""
+
+#: ../drivers/ft450d.py:1716
+msgid "Turns on the built-in electronic CW keyer, for a keyer paddle plugged into the KEY jack. Turn it off to use a straight key or an external keyer."
+msgstr ""
+
+#: ../drivers/baofeng_uv17Pro.py:1619
+msgid "Turns on the privacy function the manual calls Encryption for this channel. Other radios can only understand the conversation if they have it turned on as well and use the same DCS code."
+msgstr ""
+
+#: ../drivers/ft450d.py:1261
+msgid "Turns the radio off automatically once no button, knob or microphone key has been used and nothing has been transmitted for the selected number of hours. APO flashes on the display and a tone sounds in the last minute before the radio switches off. 0 disables automatic power off."
+msgstr ""
+
+#: ../chirp_common.py:1209
+#, python-brace-format
+msgid "Tx freq {freq} is out of supported range"
+msgstr ""
 
 #: ../wxui/memquery.py:188
 msgid "Type a simple search string or a formatted query and press enter"
 msgstr "Въведете обикновено търсене или добре форматирана заявка и натиснете Enter"
 
-#: ../wxui/clone.py:486 ../wxui/clone.py:493 ../wxui/clone.py:504
-#: ../wxui/clone.py:512 ../wxui/clone.py:516
+#: ../wxui/clone.py:496 ../wxui/clone.py:503 ../wxui/clone.py:514
+#: ../wxui/clone.py:522 ../wxui/clone.py:526
 msgid "USB Port Finder"
 msgstr "Търсене на порт на USB"
 
-#: ../wxui/clone.py:502
+#: ../chirp_common.py:1957
+#, python-format
+msgid "Unable to correct rounded frequency %s"
+msgstr ""
+
+#: ../wxui/clone.py:512
 msgid "Unable to determine port for your cable. Check your drivers and connections."
 msgstr "Грешка при определяне на порта на кабела. Проверете управляващия софтуер и куплунгите."
 
@@ -2824,7 +3857,12 @@ msgstr "Грешка при определяне на порта на кабел
 msgid "Unable to edit memory before radio is loaded"
 msgstr "Грешка при промяна на запис преди да е зареден от станцията"
 
-#: ../wxui/main.py:1417
+#: ../chirp_common.py:1853
+#, python-format
+msgid "Unable to find a supported tuning step for %s"
+msgstr ""
+
+#: ../wxui/main.py:1516
 #, python-format
 msgid "Unable to find stock config %r"
 msgstr "Грешка при намиране на стандартните настройки %r"
@@ -2837,10 +3875,14 @@ msgstr "Грешка при внасяне при сортиран изглед"
 msgid "Unable to open the clipboard"
 msgstr "Грешка при отваряне на междинната памет"
 
-#: ../sources/mapy73pl.py:50 ../sources/przemienniki_eu.py:46
-#: ../sources/przemienniki_net.py:48
+#: ../sources/przemienniki_eu.py:46 ../sources/przemienniki_net.py:48
+#: ../sources/mapy73pl.py:50
 msgid "Unable to query"
 msgstr "Грешка при заявка"
+
+#: ../sources/dmrmarc.py:50
+msgid "Unable to query DMR-MARC"
+msgstr ""
 
 #: ../drivers/ft817.py:322
 msgid "Unable to read last block. This often happens when the selected model is US but the radio is a non-US one (or widebanded). Please choose the correct model and try again."
@@ -2856,7 +3898,7 @@ msgstr "Грешка при намиране на %s на системата"
 msgid "Unable to set %s on this memory"
 msgstr "Грешка при задаване на %s в записа"
 
-#: ../wxui/main.py:1753
+#: ../wxui/main.py:1852
 msgid "Unable to upload this file"
 msgstr "Грешка при качване на файла"
 
@@ -2868,7 +3910,19 @@ msgstr "Отменяне"
 msgid "United States"
 msgstr "САЩ"
 
-#: ../wxui/clone.py:485
+#: ../sources/radioreference.py:173
+msgid "Unknown Category"
+msgstr ""
+
+#: ../directory.py:229
+msgid "Unknown file format"
+msgstr ""
+
+#: ../drivers/tdm11.py:480
+msgid "Unknown file header"
+msgstr ""
+
+#: ../wxui/clone.py:495
 msgid "Unplug your cable (if needed) and then click OK"
 msgstr "Изключете кабела (ако е необходимо) и натиснете бутона„Добре“"
 
@@ -2876,6 +3930,10 @@ msgstr "Изключете кабела (ако е необходимо) и на
 #, python-format
 msgid "Unsupported model %r"
 msgstr "Моделът %r не е поддържан"
+
+#: ../drivers/ft70.py:1237 ../drivers/ft2d.py:167 ../drivers/ft2d.py:204
+msgid "Unsupported version found in ADMS file"
+msgstr ""
 
 #: ../wxui/bugreport.py:219
 msgid "Update an existing bug"
@@ -2886,19 +3944,23 @@ msgstr "Промяна на съществуващ дефект"
 msgid "Updating bug %s"
 msgstr "Промяна на дефект %s"
 
-#: ../wxui/clone.py:898
+#: ../wxui/main.py:1175
+msgid "Upload"
+msgstr ""
+
+#: ../wxui/clone.py:908
 msgid "Upload instructions"
 msgstr "Инструкции за изпращане"
 
-#: ../drivers/uvk5.py:2084
+#: ../drivers/uvk5.py:2160
 msgid "Upload is disabled due to unsupported firmware version"
 msgstr "Не може да бъде изпращано към станцията поради неподдържана версия на управляващия софтуер"
 
-#: ../wxui/main.py:1080
+#: ../wxui/main.py:1176
 msgid "Upload to radio"
 msgstr "Изпращане към станция"
 
-#: ../wxui/main.py:876
+#: ../wxui/main.py:972
 msgid "Upload to radio..."
 msgstr "Изпращане към станция…"
 
@@ -2911,22 +3973,60 @@ msgstr "Изпратен е запис № %s"
 msgid "Use TX Frequency Workflow"
 msgstr ""
 
-#: ../wxui/main.py:832
+#: ../drivers/baofeng_uv17Pro.py:576 ../drivers/baofeng_uv17Pro.py:607
+msgid "Use at most 3 digits."
+msgstr ""
+
+#: ../drivers/kguv980p.py:1727
+msgid "Use at your own risk - may cause hardware damage and/or violate your license parameters"
+msgstr ""
+
+#: ../wxui/main.py:928
 msgid "Use fixed-width font"
 msgstr "Равноширок шрифт"
 
-#: ../wxui/main.py:840
+#: ../wxui/main.py:936
 msgid "Use larger font"
 msgstr "По-едър шрифт"
 
-#: ../wxui/bugreport.py:266
+#: ../wxui/bugreport.py:266 ../wxui/query_sources.py:1054
 msgid "Username"
 msgstr "Потребител"
+
+#: ../sources/repeaterbook.py:143 ../sources/repeaterbook.py:146
+#: ../sources/repeaterbook.py:156
+msgid "Using cached data"
+msgstr ""
+
+#: ../settings.py:149
+#, python-format
+msgid "Value %i not in range %i-%i"
+msgstr ""
+
+#: ../settings.py:328
+#, python-format
+msgid "Value %r contains invalid character `%s'"
+msgstr ""
+
+#: ../settings.py:323
+#, python-format
+msgid "Value %r must be between %i and %i chars"
+msgstr ""
+
+#: ../settings.py:191
+#, python-format
+msgid "Value %s not in range %s-%s"
+msgstr ""
 
 #: ../wxui/developer.py:314
 #, python-format
 msgid "Value does not fit in %i bits"
 msgstr "Стойността не се побира в %i бита"
+
+#: ../settings.py:264
+#, python-format
+msgid "Value for %s is out of range"
+msgstr ""
 
 #: ../wxui/common.py:759
 #, python-format
@@ -2951,24 +4051,28 @@ msgstr "Стойността трябва да бъде нула или пове
 msgid "Value to search memory field for"
 msgstr "Стойност, която търсите в запис в паметта"
 
-#: ../wxui/memedit.py:2925
+#: ../wxui/memedit.py:2926
 msgid "Values"
 msgstr "Стойности"
 
-#: ../wxui/clone.py:353
+#: ../wxui/clone.py:363
 msgid "Vendor"
 msgstr "Производител"
 
-#: ../wxui/main.py:1041
+#: ../wxui/main.py:1137
 msgid "View"
 msgstr "Изглед"
+
+#: ../drivers/baofeng_uv17Pro.py:1031
+msgid "Voice operated transmit. The radio starts transmitting when you speak towards the microphone, so hands-free conversation is possible without pressing PTT."
+msgstr ""
 
 #: ../wxui/common.py:707
 msgid "WARNING!"
 msgstr "ВНИМАНИЕ!"
 
-#: ../wxui/bugreport.py:235 ../wxui/main.py:1907 ../wxui/main.py:2059
-#: ../wxui/memedit.py:2055
+#: ../wxui/bugreport.py:235 ../wxui/memedit.py:2055 ../wxui/main.py:2006
+#: ../wxui/main.py:2164
 msgid "Warning"
 msgstr "Внимание"
 
@@ -2977,9 +4081,21 @@ msgstr "Внимание"
 msgid "Warning: %s"
 msgstr "Внимание: %s"
 
-#: ../wxui/main.py:462
+#: ../drivers/baofeng_uv17Pro.py:812
+msgid "Warns you the selected number of seconds before the time-out timer ends a transmission. Off turns the warning off."
+msgstr ""
+
+#: ../wxui/main.py:405
 msgid "Welcome"
 msgstr "Добре дошли"
+
+#: ../drivers/baofeng_uv17Pro.py:750
+msgid "When it is off, the keypad can still be locked by hand."
+msgstr ""
+
+#: ../drivers/ft450d.py:1838
+msgid "When on, holding the microphone UP or DWN key for about a second starts a scan that continues after the key is released. When off, the radio only scans while the key is held down."
+msgstr ""
 
 #: ../wxui/query_sources.py:418
 msgid "With this option checked, a proximity search will include cached results from other localities if they are in range, match other filter parameters, and have been downloaded before."
@@ -2993,7 +4109,7 @@ msgstr "Желаете ли пряк път към CHIRP на работния �
 msgid "You have opened multiple issues within the last week. CHIRP limits the number of issues you can open to avoid abuse. If you really need to open another, please do so via the website."
 msgstr "През изминалите седем дена сте докладвали няколко дефекта. С цел предотвратяване на злоупотреби CHIRP ограничава броя на докладите през приложението. Ако трябва да докладвате нов дефект го направете през страницата."
 
-#: ../wxui/clone.py:523
+#: ../wxui/clone.py:533
 msgid "Your Prolific-based USB device will not work without reverting to an older version of the driver. Visit the CHIRP website to read more about how to resolve this?"
 msgstr "USB устройството от Prolific няма да работи преди да върнете по-предно издание на управляващия софтуер. Посещаване страницата на CHIRP, за да прочетете как да решите този проблем?"
 
@@ -3001,9 +4117,13 @@ msgstr "USB устройството от Prolific няма да работи п
 msgid "Your QTH Locator"
 msgstr ""
 
-#: ../wxui/clone.py:510
+#: ../wxui/clone.py:520
 msgid "Your cable appears to be on port:"
 msgstr "Изглежда кабелът е включен в порт:"
+
+#: ../wxui/query_sources.py:1118
+msgid "ZIP Code"
+msgstr ""
 
 #: ../wxui/developer.py:194
 msgid "bits"
@@ -3017,6 +4137,14 @@ msgstr "байта"
 msgid "bytes each"
 msgstr "байта всеки"
 
+#: ../chirp_common.py:560
+msgid "cTone is not a valid number"
+msgstr ""
+
+#: ../chirp_common.py:562
+msgid "cTone is not valid"
+msgstr ""
+
 #: ../wxui/common.py:545
 msgid "checkbox"
 msgstr ""
@@ -3025,7 +4153,7 @@ msgstr ""
 msgid "checked"
 msgstr ""
 
-#: ../wxui/main.py:1992
+#: ../wxui/main.py:2093
 msgid "disabled"
 msgstr "изключен"
 
@@ -3033,7 +4161,7 @@ msgstr "изключен"
 msgid "empty"
 msgstr ""
 
-#: ../wxui/main.py:1992
+#: ../wxui/main.py:2093
 msgid "enabled"
 msgstr "включен"
 
@@ -3045,8 +4173,25 @@ msgstr ""
 msgid "locked"
 msgstr ""
 
+#: ../settings.py:366
+#, python-format
+msgid "map_entries must be 2 el tuples instead of: %s"
+msgstr ""
+
 #: ../wxui/common.py:550
 msgid "number"
+msgstr ""
+
+#: ../import_logic.py:239
+msgid "offset is abnormally large."
+msgstr ""
+
+#: ../chirp_common.py:552
+msgid "rTone is not a valid number"
+msgstr ""
+
+#: ../chirp_common.py:554
+msgid "rTone is not valid"
 msgstr ""
 
 #: ../wxui/bugreport.py:421
@@ -3143,9 +4288,6 @@ msgstr "{bank} е пълна"
 #, python-format
 #~ msgid "Frequency %s is out of supported range"
 #~ msgstr "Честотата %s е извън поддържания обхват"
-
-#~ msgid "Name"
-#~ msgstr "Име"
 
 #~ msgid "OK"
 #~ msgstr "Добре"

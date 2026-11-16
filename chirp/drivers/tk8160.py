@@ -73,10 +73,10 @@ struct {
        unknown2_01:1,
        wide:1;
     u8 beatshift:1,
-       unknown2_1:1,
+       scrambler:1,
        highpower:1,
        scanadd:1,
-       unknown2_2:4;
+       scramblercode:4; // code - 1
     u8 unknown2_3:6,
        pttid:2; // 0:off 1:BOT 2:EOT 3:Both
     char name[8];
@@ -103,7 +103,7 @@ struct {
 
 // 28=volup 2A=None 15=2-tone 8=AUX 16=Call1 17=Call2 13=ChDn 12=ChUp
 // 0B=DisplayCh 09=HornAlert 03=KeyLock 14=Brightness 02=Monitor 25=MonMom
-// 0C=OST 19=PA 1A=SquelchLevel 05=Scan 06=ScanAdd 0A=Scrambler 18=Selcall
+// 0C=OST 19=PA 1A=SquelchLevel 05=Scan 06=ScanAdd 0A=Scrambler 1B=Selcall
 // 27=SendGPS 04=TA 28=VolUp 29=VolDn 00=ZoneUp 24=SqlOff 26=SqlOffMom
 // 1C=Status 1D=SelCall+Status 01=ZoneDn
 #seekto 0x1820;
@@ -145,10 +145,10 @@ _KEYS = [
     '2-Tone',
     'Call 1',
     'Call 2',
-    'Selcall',
+    '?',  # 18
     'Public Address',
     'Squelch Level',
-    '?',
+    'Selcall',  # 1B
     'Status',
     'Selcall+Status',
     '?',  # 1E
@@ -215,6 +215,17 @@ KEY_NAMES = {
 
 POWER_LEVELS = [chirp_common.PowerLevel('Low', watts=25),
                 chirp_common.PowerLevel('High', watts=50)]
+
+BCL_OPTIONS = ['Off', 'Carrier', 'QT/DQT', 'Optional Signaling']
+PTTID_OPTIONS = ['Off', 'BOT', 'EOT', 'Both']
+OPTSIG_OPTIONS = ['Off', 'DTMF', '2-Tone 1', '2-Tone 2', '2-Tone 3',
+                  'FleetSync']
+
+# The ranges KPG writes, in the same frames. It does not write 0x0000-0x001F,
+# which the radio maintains itself, or 0x1740-0x17DF, which holds the radio's
+# model, serial number and what look like alignment values, so an image read
+# from one radio does not overwrite another radio's identity.
+UPLOAD_RANGES = [(0x0020, 0x1740), (0x17E0, 0x3120)]
 
 
 def ends_program(fn):
@@ -290,15 +301,17 @@ def do_upload(radio):
         radio.status_fn(status)
         LOG.debug('Radio address 0x%04x' % addr)
 
-    for addr in range(0, 0x30E0, 0x40):
-        block = data[addr:addr + 0x40]
-        hdr = struct.pack('>cHB', b'W', addr, 0x40)
-        radio.pipe.write(hdr + block)
-        ack = radio.pipe.read(1)
-        if ack != b'\x06':
-            LOG.error('Expected ack, got %r' % ack)
-            raise errors.RadioError('Radio did not ACK block')
-        status(addr)
+    for start, end in UPLOAD_RANGES:
+        for addr in range(start, end, 0x40):
+            length = min(0x40, end - addr)
+            block = data[addr:addr + length]
+            hdr = struct.pack('>cHB', b'W', addr, length)
+            radio.pipe.write(hdr + block)
+            ack = radio.pipe.read(1)
+            if ack != b'\x06':
+                LOG.error('Expected ack, got %r' % ack)
+                raise errors.RadioError('Radio did not ACK block')
+            status(addr)
 
 
 class TKx160Radio(chirp_common.CloneModeRadio):
@@ -308,6 +321,7 @@ class TKx160Radio(chirp_common.CloneModeRadio):
     _channels = 128
     _power_levels = POWER_LEVELS
     _has_zones = True
+    _has_memory_extras = True
     _mem_format = mem_format
 
     def sync_in(self):
@@ -436,13 +450,19 @@ class TKx160Radio(chirp_common.CloneModeRadio):
         """Claim the next available slot entry for channel."""
         for next_index in range(128):
             index_obj = self._memobj.index[next_index]
-            if index_obj.zone == 0xFF:
+            if not 1 <= int(index_obj.zone) <= 128:
                 break
         else:
             raise errors.RadioError('Radio is out if index memory')
 
+        used_slots = set()
+        for i in range(128):
+            index_obj = self._memobj.index[i]
+            if 1 <= int(index_obj.zone) <= 128:
+                used_slots.add(int(index_obj.slot))
+
         for next_slot in range(128):
-            if self._memobj.memories[next_slot].number == 0xFF:
+            if next_slot not in used_slots:
                 break
         else:
             raise errors.RadioError('Radio is out of memory slots')
@@ -500,9 +520,10 @@ class TKx160Radio(chirp_common.CloneModeRadio):
             index_obj = self._memobj.index[i]
             byte = i // 8
             mask = 1 << (i % 8)
-            if index_obj.memory != 0xFF:
+            zone = int(index_obj.zone)
+            if 1 <= zone <= 128:
                 mem_flags[byte] |= mask
-                zone_counts[index_obj.zone - 1] += 1
+                zone_counts[zone - 1] += 1
 
         for i, byte in enumerate(mem_flags):
             self._memobj.flag1[i] = byte
@@ -554,7 +575,49 @@ class TKx160Radio(chirp_common.CloneModeRadio):
         m.mode = 'FM' if _mem.wide else 'NFM'
         m.skip = '' if _mem.scanadd else 'S'
 
+        if self._has_memory_extras:
+            m.extra = self._get_memory_extras(_mem)
+
         return m
+
+    @staticmethod
+    def _get_memory_extras(_mem):
+        optsig = int(_mem.optsig)
+        if optsig >= len(OPTSIG_OPTIONS):
+            LOG.warning('Unknown optional signaling %i, showing Off', optsig)
+            optsig = 0
+
+        extra = settings.RadioSettingGroup('extra', 'Extra')
+        extra.append(settings.MemSetting(
+            'bcl', 'Busy Channel Lockout',
+            settings.RadioSettingValueList(BCL_OPTIONS,
+                                           current_index=int(_mem.bcl))))
+        extra.append(settings.MemSetting(
+            'beatshift', 'Beat Shift',
+            settings.RadioSettingValueBoolean(bool(_mem.beatshift))))
+        extra.append(settings.MemSetting(
+            'pttid', 'PTT ID',
+            settings.RadioSettingValueList(PTTID_OPTIONS,
+                                           current_index=int(_mem.pttid))))
+        extra.append(settings.MemSetting(
+            'pttidmute', 'PTT ID Mute',
+            settings.RadioSettingValueBoolean(bool(_mem.pttidmute))))
+        extra.append(settings.MemSetting(
+            'compander', 'Compander',
+            settings.RadioSettingValueBoolean(bool(_mem.compander))))
+        extra.append(settings.MemSetting(
+            'optsig', 'Optional Signaling',
+            settings.RadioSettingValueList(OPTSIG_OPTIONS,
+                                           current_index=optsig)))
+        extra.append(settings.MemSetting(
+            'scrambler', 'Scrambler',
+            settings.RadioSettingValueBoolean(bool(_mem.scrambler))))
+        extra.append(settings.MemSetting(
+            'scramblercode', 'Scrambler Code',
+            settings.RadioSettingValueList(
+                [str(c) for c in range(1, 17)],
+                current_index=int(_mem.scramblercode))))
+        return extra
 
     def set_memory(self, mem):
         _index_entry, slot = self.check_index(mem.number)
@@ -563,7 +626,8 @@ class TKx160Radio(chirp_common.CloneModeRadio):
                 self._memobj.memories[slot].set_raw(b'\xFF' * 32)
                 self.delete_from_index(mem.number)
             return
-        elif slot is None:
+        is_new = slot is None
+        if is_new:
             slot = self.next_slot(mem.number)
 
         _mem = self._memobj.memories[slot]
@@ -595,27 +659,33 @@ class TKx160Radio(chirp_common.CloneModeRadio):
         _mem.scanadd = mem.skip == ''
         _mem.name = mem.name[:8].ljust(8)
 
-        # Set the flags we don't support
-        _mem.bcl = 0
-        _mem.beatshift = 0
-        _mem.pttid = 0
-        _mem.compander = 0
-        _mem.pttidmute = 0
-        _mem.optsig = 0
+        extras = mem.extra if self._has_memory_extras else []
+        if is_new and not extras:
+            # Defaults for the flags in extra, for a new memory only, so that
+            # editing a memory does not undo settings made in KPG
+            _mem.bcl = 0
+            _mem.beatshift = 0
+            _mem.pttid = 0
+            _mem.compander = 0
+            _mem.pttidmute = 0
+            _mem.optsig = 0
+            _mem.scrambler = 0
+            _mem.scramblercode = 0
 
         # Set the unknowns
         _mem.unknown1[0] = 0x02
         _mem.unknown1[1] = 0x02
         _mem.unknown2_0 = 0x0F
         _mem.unknown2_01 = 0x00
-        _mem.unknown2_1 = 0x00
-        _mem.unknown2_2 = 0x00
         _mem.unknown2_3 = 0x00
         _mem.unknown3_0 = 0x00
         _mem.unknown3_1 = 0x00
         _mem.unknown4 = 0x1F
         _mem.unknown5[0] = 0xFF
         _mem.unknown5[1] = 0xFF
+
+        for setting in extras:
+            setting.apply_to_memobj(_mem)
 
     @staticmethod
     def make_key_group(keysobj, keynames, keyvals):
@@ -748,6 +818,7 @@ class TK7162Radio(TKx160Radio):
     _channels = 16
     _power_levels = _POWER_LEVELS_7162
     _has_zones = False
+    _has_memory_extras = False
     _mem_format = mem_format_7162
 
     def get_settings(self) -> settings.RadioSettings:

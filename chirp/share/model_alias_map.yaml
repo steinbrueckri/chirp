@@ -327,6 +327,9 @@ Tonfa:
 Vero:
 - alt: Baofeng UV-5R
   model: UV-E5, UV-E5 MK II
+WLN:
+- alt: Retevis RT15
+  model: KD-C56
 Wouxun:
 - alt: KG-UVD1P
   model: KG-UV2D
@@ -336,6 +339,8 @@ Wouxun:
   model: KG-UV5D
 - alt: KG-UV6
   model: KG-UV7D
+- alt: Wouxun KG-935G Plus
+  model: KG-945G
 - alt: Wouxun KG-UV9D Plus
   model: KG-UV9P
 - alt: Wouxun KG-UV9D Plus

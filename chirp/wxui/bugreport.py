@@ -31,9 +31,9 @@ from chirp import CHIRP_VERSION
 from chirp import chirp_common
 from chirp import logger
 from chirp import platform as chirp_platform
+from chirp import serialtrace
 from chirp.wxui import common
 from chirp.wxui import config
-from chirp.wxui import serialtrace
 from chirp.wxui import report
 
 
@@ -589,7 +589,7 @@ class ResultPage(BugReportPage):
         self.thread = None
         self.Bind(EVT_REPORT_THREAD, self.report_done)
 
-        self.result = wx.StaticText(self, label='Sending report...',
+        self.result = wx.StaticText(self, label=_('Sending report...'),
                                     style=wx.TE_CENTER)
         vbox.Add(self.result, 0, border=20, flag=wx.EXPAND | wx.ALL)
 
