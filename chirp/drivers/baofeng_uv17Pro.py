@@ -157,12 +157,12 @@ def _do_ident(radio_class, pipe):
 def _download(radio):
     """Get the memory map"""
 
-    if radio.detected_models():
+    if radio.detected_models(include_self=False):
         # Ident will have already been called by the serial detection
         pass
     else:
         # Put radio in program mode and identify it
-        _do_ident(radio)
+        _do_ident(radio.__class__, radio.pipe)
     data = b""
 
     # UI progress
